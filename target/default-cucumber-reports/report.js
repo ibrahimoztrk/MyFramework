@@ -1,11 +1,11 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/seleniuleasy02.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/seleniumeasy06.feature");
 formatter.feature({
-  "name": "Select List",
+  "name": "User is on the Webtables",
   "description": "",
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@seleniumeasy02"
+      "name": "@seleniumeasy06"
     }
   ]
 });
@@ -15,7 +15,7 @@ formatter.scenario({
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@seleniumeasy02"
+      "name": "@seleniumeasy06"
     },
     {
       "name": "@TC001"
@@ -34,7 +34,7 @@ formatter.result({
 });
 formatter.step({
   "name": "The user clicks on the Start Practicing",
-  "keyword": "Given "
+  "keyword": "And "
 });
 formatter.match({
   "location": "stepdefinitions.SEasyStepDef01.the_user_clicks_on_the_Start_Practicing()"
@@ -43,318 +43,155 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "The user clicks on the on Select Dropdown List",
+  "name": "The user clicks on the Table",
   "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.SelectStepDef.the_user_clicks_on_the_on_Select_Dropdown_List()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenarioOutline({
-  "name": "Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown\u0027dan tum gunleri secebildilgini dogrulamalidir.",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@TC002"
-    }
-  ]
-});
-formatter.step({
-  "name": "Kullanici select \"\u003cday\u003e\"",
-  "keyword": "Given "
-});
-formatter.step({
-  "name": "user Assert that the \"\u003cday\u003e\" has selected",
-  "keyword": "Then "
-});
-formatter.examples({
-  "name": "",
-  "description": "",
-  "keyword": "Examples",
-  "rows": [
-    {
-      "cells": [
-        "day"
-      ]
-    },
-    {
-      "cells": [
-        "Sunday"
-      ]
-    },
-    {
-      "cells": [
-        "Monday"
-      ]
-    },
-    {
-      "cells": [
-        "Tuesday"
-      ]
-    },
-    {
-      "cells": [
-        "Wednesday"
-      ]
-    },
-    {
-      "cells": [
-        "Thursday"
-      ]
-    },
-    {
-      "cells": [
-        "Friday"
-      ]
-    },
-    {
-      "cells": [
-        "Saturday"
-      ]
-    }
-  ]
-});
-formatter.scenario({
-  "name": "Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown\u0027dan tum gunleri secebildilgini dogrulamalidir.",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@seleniumeasy02"
-    },
-    {
-      "name": "@TC002"
-    }
-  ]
-});
-formatter.step({
-  "name": "Kullanici select \"Sunday\"",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "stepdefinitions.SelectStepDef.kullanici_select(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user Assert that the \"Sunday\" has selected",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.SelectStepDef.userAssertThatTheHasSelected(java.lang.String)"
+  "location": "stepdefinitions.Us06_TableStepDef.the_user_clicks_on_the_Table()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown\u0027dan tum gunleri secebildilgini dogrulamalidir.",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@seleniumeasy02"
-    },
-    {
-      "name": "@TC002"
-    }
-  ]
-});
-formatter.step({
-  "name": "Kullanici select \"Monday\"",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "stepdefinitions.SelectStepDef.kullanici_select(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user Assert that the \"Monday\" has selected",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.SelectStepDef.userAssertThatTheHasSelected(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown\u0027dan tum gunleri secebildilgini dogrulamalidir.",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@seleniumeasy02"
-    },
-    {
-      "name": "@TC002"
-    }
-  ]
-});
-formatter.step({
-  "name": "Kullanici select \"Tuesday\"",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "stepdefinitions.SelectStepDef.kullanici_select(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user Assert that the \"Tuesday\" has selected",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.SelectStepDef.userAssertThatTheHasSelected(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown\u0027dan tum gunleri secebildilgini dogrulamalidir.",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@seleniumeasy02"
-    },
-    {
-      "name": "@TC002"
-    }
-  ]
-});
-formatter.step({
-  "name": "Kullanici select \"Wednesday\"",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "stepdefinitions.SelectStepDef.kullanici_select(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user Assert that the \"Wednesday\" has selected",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.SelectStepDef.userAssertThatTheHasSelected(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown\u0027dan tum gunleri secebildilgini dogrulamalidir.",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@seleniumeasy02"
-    },
-    {
-      "name": "@TC002"
-    }
-  ]
-});
-formatter.step({
-  "name": "Kullanici select \"Thursday\"",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "stepdefinitions.SelectStepDef.kullanici_select(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user Assert that the \"Thursday\" has selected",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.SelectStepDef.userAssertThatTheHasSelected(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown\u0027dan tum gunleri secebildilgini dogrulamalidir.",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@seleniumeasy02"
-    },
-    {
-      "name": "@TC002"
-    }
-  ]
-});
-formatter.step({
-  "name": "Kullanici select \"Friday\"",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "stepdefinitions.SelectStepDef.kullanici_select(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user Assert that the \"Friday\" has selected",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.SelectStepDef.userAssertThatTheHasSelected(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown\u0027dan tum gunleri secebildilgini dogrulamalidir.",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@seleniumeasy02"
-    },
-    {
-      "name": "@TC002"
-    }
-  ]
-});
-formatter.step({
-  "name": "Kullanici select \"Saturday\"",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "stepdefinitions.SelectStepDef.kullanici_select(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user Assert that the \"Saturday\" has selected",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "stepdefinitions.SelectStepDef.userAssertThatTheHasSelected(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "User select a day",
+  "name": "Kullanici Table Pagination sayfasindadir",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@seleniumeasy02"
+      "name": "@seleniumeasy06"
+    },
+    {
+      "name": "@TC002"
+    }
+  ]
+});
+formatter.step({
+  "name": "The user clicks on Table Pagination",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "stepdefinitions.Us06_TableStepDef.the_user_clicks_on_Table_Pagination()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Kullanici # satirinin \"1\" ile basladigini assert eder",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.Us06_TableStepDef.kullanici_satirinin_ile_basladigini_assert_eder(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Kullanici ikinci. sayfa linkine tiklar",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.Us06_TableStepDef.kullanici_ikinci_sayfa_linkine_tiklar()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Kullanici ikinci. sayfanin  # satirinin \"6\" ile basladigini assert eder",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.Us06_TableStepDef.kullanici_ikinci_sayfanin_satirinin_ile_basladigini_assert_eder(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Kullanici ucuncu.sayfanin linkine tiklar",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.Us06_TableStepDef.kullanici_ucuncu_sayfanin_linkine_tiklar()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Kullanici ucuncu sayfa  # satirinin \"11\" ile basladigini assert eder",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.Us06_TableStepDef.kullanici_ucuncu_sayfa_satirinin_ile_basladigini_assert_eder(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Kullanici tekrar birinci sayfaya doner",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.Us06_TableStepDef.kullaniciTekrarBirinciSayfayaDoner()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Kullanici ileri sayfa linkine tiklar",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.Us06_TableStepDef.kullanici_ileri_sayfa_linkine_tiklar()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Kullanici # satirinin ilk hucresinin \"6\" ile basladigini assert eder",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.Us06_TableStepDef.kullanici_satirinin_ilk_hucresinin_ile_basladigini_assert_eder(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Kullanici geri sayfa linkine tiklar",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.Us06_TableStepDef.kullanici_geri_sayfa_linkine_tiklar()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Kullanici # satirinin birinci hucresinin \"1\" ile basladigini assert eder",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.Us06_TableStepDef.kullanici_satirinin_birinci_hucresinin_ile_basladigini_assert_eder(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Kullanici toplam 91 cell oldugunu assert eder",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.Us06_TableStepDef.kullanici_toplam_cell_oldugunu_assert_eder(java.lang.Integer)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Kullanici table data search sayfasindadir",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@seleniumeasy06"
     },
     {
       "name": "@TC003"
@@ -362,23 +199,107 @@ formatter.scenario({
   ]
 });
 formatter.step({
-  "name": "User select \"Friday\"",
+  "name": "Kullanici table data search linkine tiklar",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "stepdefinitions.SelectStepDef.user_select(java.lang.String)"
+  "location": "stepdefinitions.Us06_TableStepDef.kullanici_table_data_search_linkine_tiklar()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "user Assert that the select day is \"Friday\"",
-  "keyword": "Then "
+  "name": "Kullanici Tasks panelinin altinda sirasiyla Task, Assignee, Status basliklarinin oldugunu dogrular.",
+  "keyword": "And "
 });
 formatter.match({
-  "location": "stepdefinitions.SelectStepDef.user_Assert_that_the_select_day_is(java.lang.String)"
+  "location": "stepdefinitions.Us06_TableStepDef.kullanici_Tasks_panelinin_altinda_sirasiyla_Task_Assignee_Status_basliklarinin_oldugunu_dogrular()"
 });
 formatter.result({
   "status": "passed"
+});
+formatter.step({
+  "name": "Kullanici input\u0027ta Filter by Task,Assignee,Status textinin yer aldigini dogrular",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.Us06_TableStepDef.kullanici_input_ta_Filter_by_Task_Assignee_Status_textinin_yer_aldigini_dogrular()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Kullanici input\u0027a \"Mike\" yazar",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.Us06_TableStepDef.kullanici_input_a_yazar(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Kullanici tabloda sadece bir satir oldugunu ve bu satirin \"Mike\" ismine ait oldugunu assert eder",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.Us06_TableStepDef.kullanici_tabloda_sadece_bir_satir_oldugunu_ve_bu_satirin_ismine_ait_oldugunu_assert_eder(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Listed Users tablosunda filtreleme yapar",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@seleniumeasy06"
+    },
+    {
+      "name": "@TC004"
+    }
+  ]
+});
+formatter.step({
+  "name": "Kullanici Listed Users panelinin aldindaki 4 tane input\u0027un aktif olmadigini assert eder",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "stepdefinitions.Us06_TableStepDef.kullanici_Listed_Users_panelinin_aldindaki_tane_input_un_aktif_olmadigini_assert_eder(java.lang.Integer)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Kullanici filtre butonuna basar",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.Us06_TableStepDef.kullanici_filtre_butonuna_basar()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Kullanici firstname inputune \"B\" harfi girer",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "stepdefinitions.Us06_TableStepDef.kullanici_firstname_inputune_harfi_girer(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Kullanici tablo\u0027da B harfi ile baslayan iki isime ait satirlari gorur",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "stepdefinitions.Us06_TableStepDef.kullanici_tablo_da_B_harfi_ile_baslayan_iki_isime_ait_satirlari_gorur()"
+});
+formatter.result({
+  "error_message": "java.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:86)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat org.junit.Assert.assertTrue(Assert.java:52)\r\n\tat stepdefinitions.Us06_TableStepDef.kullanici_tablo_da_B_harfi_ile_baslayan_iki_isime_ait_satirlari_gorur(Us06_TableStepDef.java:148)\r\n\tat ✽.Kullanici tablo\u0027da B harfi ile baslayan iki isime ait satirlari gorur(file:///C:/Users/ibrahim/IdeaProjects/MyFramework01/src/test/resources/features/seleniumeasy06.feature:40)\r\n",
+  "status": "failed"
 });
 });

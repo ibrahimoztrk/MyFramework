@@ -1,49 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="9" time="15.319">
-<testcase classname="Select List" name="user is on the home page" time="11.936">
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="14.429">
+<testcase classname="User is on the Webtables" name="user is on the home page" time="9.027">
 <system-out><![CDATA[Given The user is on the page of "https://www.seleniumeasy.com/test/".......passed
-Given The user clicks on the Start Practicing...............................passed
-And The user clicks on the on Select Dropdown List..........................passed
+And The user clicks on the Start Practicing.................................passed
+And The user clicks on the Table............................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Select List" name="Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown'dan tum gunleri secebildilgini dogrulamalidir." time="0.32">
-<system-out><![CDATA[Given Kullanici select "Sunday".............................................passed
-Then user Assert that the "Sunday" has selected.............................passed
+<testcase classname="User is on the Webtables" name="Kullanici Table Pagination sayfasindadir" time="1.174">
+<system-out><![CDATA[Given The user clicks on Table Pagination...................................passed
+And Kullanici # satirinin "1" ile basladigini assert eder...................passed
+And Kullanici ikinci. sayfa linkine tiklar..................................passed
+And Kullanici ikinci. sayfanin  # satirinin "6" ile basladigini assert eder.passed
+And Kullanici ucuncu.sayfanin linkine tiklar................................passed
+And Kullanici ucuncu sayfa  # satirinin "11" ile basladigini assert eder....passed
+And Kullanici tekrar birinci sayfaya doner..................................passed
+And Kullanici ileri sayfa linkine tiklar....................................passed
+And Kullanici # satirinin ilk hucresinin "6" ile basladigini assert eder....passed
+And Kullanici geri sayfa linkine tiklar.....................................passed
+And Kullanici # satirinin birinci hucresinin "1" ile basladigini assert eder.passed
+Then Kullanici toplam 91 cell oldugunu assert eder..........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Select List" name="Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown'dan tum gunleri secebildilgini dogrulamalidir. 2" time="0.289">
-<system-out><![CDATA[Given Kullanici select "Monday".............................................passed
-Then user Assert that the "Monday" has selected.............................passed
+<testcase classname="User is on the Webtables" name="Kullanici table data search sayfasindadir" time="2.857">
+<system-out><![CDATA[Given Kullanici table data search linkine tiklar............................passed
+And Kullanici Tasks panelinin altinda sirasiyla Task, Assignee, Status basliklarinin oldugunu dogrular..passed
+And Kullanici input'ta Filter by Task,Assignee,Status textinin yer aldigini dogrular.passed
+And Kullanici input'a "Mike" yazar..........................................passed
+Then Kullanici tabloda sadece bir satir oldugunu ve bu satirin "Mike" ismine ait oldugunu assert eder.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Select List" name="Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown'dan tum gunleri secebildilgini dogrulamalidir. 3" time="0.293">
-<system-out><![CDATA[Given Kullanici select "Tuesday"............................................passed
-Then user Assert that the "Tuesday" has selected............................passed
-]]></system-out>
-</testcase>
-<testcase classname="Select List" name="Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown'dan tum gunleri secebildilgini dogrulamalidir. 4" time="0.303">
-<system-out><![CDATA[Given Kullanici select "Wednesday"..........................................passed
-Then user Assert that the "Wednesday" has selected..........................passed
-]]></system-out>
-</testcase>
-<testcase classname="Select List" name="Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown'dan tum gunleri secebildilgini dogrulamalidir. 5" time="0.353">
-<system-out><![CDATA[Given Kullanici select "Thursday"...........................................passed
-Then user Assert that the "Thursday" has selected...........................passed
-]]></system-out>
-</testcase>
-<testcase classname="Select List" name="Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown'dan tum gunleri secebildilgini dogrulamalidir. 6" time="0.293">
-<system-out><![CDATA[Given Kullanici select "Friday".............................................passed
-Then user Assert that the "Friday" has selected.............................passed
-]]></system-out>
-</testcase>
-<testcase classname="Select List" name="Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown'dan tum gunleri secebildilgini dogrulamalidir. 7" time="0.315">
-<system-out><![CDATA[Given Kullanici select "Saturday"...........................................passed
-Then user Assert that the "Saturday" has selected...........................passed
-]]></system-out>
-</testcase>
-<testcase classname="Select List" name="User select a day" time="0.287">
-<system-out><![CDATA[Given User select "Friday"..................................................passed
-Then user Assert that the select day is "Friday"............................passed
-]]></system-out>
+<testcase classname="User is on the Webtables" name="Listed Users tablosunda filtreleme yapar" time="0.489">
+<failure message="" type="java.lang.AssertionError"><![CDATA[Given Kullanici Listed Users panelinin aldindaki 4 tane input'un aktif olmadigini assert eder.passed
+And Kullanici filtre butonuna basar.........................................passed
+And Kullanici firstname inputune "B" harfi girer............................passed
+Then Kullanici tablo'da B harfi ile baslayan iki isime ait satirlari gorur..failed
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at stepdefinitions.Us06_TableStepDef.kullanici_tablo_da_B_harfi_ile_baslayan_iki_isime_ait_satirlari_gorur(Us06_TableStepDef.java:148)
+	at ✽.Kullanici tablo'da B harfi ile baslayan iki isime ait satirlari gorur(file:///C:/Users/ibrahim/IdeaProjects/MyFramework01/src/test/resources/features/seleniumeasy06.feature:40)
+]]></failure>
 </testcase>
 </testsuite>

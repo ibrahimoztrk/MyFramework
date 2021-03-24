@@ -3,6 +3,7 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.junit.Test;
 import org.openqa.selenium.support.ui.Select;
 import pages.SePage01;
 import pages.SelectPage;
@@ -42,6 +43,5 @@ public class SelectStepDef {
     public void user_Assert_that_the_select_day_is(String string) {
         Assert.assertTrue(selectPage.daySelectedValue.getText().contains(string));
     }
-
 
 }

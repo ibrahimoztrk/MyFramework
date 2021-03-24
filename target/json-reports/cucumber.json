@@ -3,20 +3,20 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2021-03-21T20:44:48.122Z",
-        "line": 5,
+        "start_timestamp": "2021-03-23T14:05:52.086Z",
+        "line": 6,
         "name": "user is on the home page",
         "description": "",
-        "id": "select-list;user-is-on-the-home-page",
+        "id": "user-is-on-the-webtables;user-is-on-the-home-page",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 10895000000,
+              "duration": 7197000000,
               "status": "passed"
             },
-            "line": 6,
+            "line": 7,
             "name": "The user is on the page of \"https://www.seleniumeasy.com/test/\"",
             "match": {
               "arguments": [
@@ -31,32 +31,32 @@
           },
           {
             "result": {
-              "duration": 102000000,
+              "duration": 114000000,
               "status": "passed"
             },
-            "line": 7,
+            "line": 8,
             "name": "The user clicks on the Start Practicing",
             "match": {
               "location": "stepdefinitions.SEasyStepDef01.the_user_clicks_on_the_Start_Practicing()"
             },
-            "keyword": "Given "
+            "keyword": "And "
           },
           {
             "result": {
-              "duration": 823000000,
+              "duration": 1598000000,
               "status": "passed"
             },
-            "line": 8,
-            "name": "The user clicks on the on Select Dropdown List",
+            "line": 9,
+            "name": "The user clicks on the Table",
             "match": {
-              "location": "stepdefinitions.SelectStepDef.the_user_clicks_on_the_on_Select_Dropdown_List()"
+              "location": "stepdefinitions.Us06_TableStepDef.the_user_clicks_on_the_Table()"
             },
             "keyword": "And "
           }
         ],
         "tags": [
           {
-            "name": "@seleniumeasy02"
+            "name": "@seleniumeasy06"
           },
           {
             "name": "@TC001"
@@ -64,454 +64,384 @@
         ]
       },
       {
-        "start_timestamp": "2021-03-21T20:45:00.074Z",
-        "line": 16,
-        "name": "Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown\u0027dan tum gunleri secebildilgini dogrulamalidir.",
+        "start_timestamp": "2021-03-23T14:06:01.145Z",
+        "line": 13,
+        "name": "Kullanici Table Pagination sayfasindadir",
         "description": "",
-        "id": "select-list;kullanici--select-list-demo-basligi-altindaki-select-a-day-(select-one):-dropdown-dan-tum-gunleri-secebildilgini-dogrulamalidir.;;2",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 265000000,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "Kullanici select \"Sunday\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Sunday\"",
-                  "offset": 17
-                }
-              ],
-              "location": "stepdefinitions.SelectStepDef.kullanici_select(java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 41000000,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "user Assert that the \"Sunday\" has selected",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Sunday\"",
-                  "offset": 21
-                }
-              ],
-              "location": "stepdefinitions.SelectStepDef.userAssertThatTheHasSelected(java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@seleniumeasy02"
-          },
-          {
-            "name": "@TC002"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2021-03-21T20:45:00.399Z",
-        "line": 17,
-        "name": "Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown\u0027dan tum gunleri secebildilgini dogrulamalidir.",
-        "description": "",
-        "id": "select-list;kullanici--select-list-demo-basligi-altindaki-select-a-day-(select-one):-dropdown-dan-tum-gunleri-secebildilgini-dogrulamalidir.;;3",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 248000000,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "Kullanici select \"Monday\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Monday\"",
-                  "offset": 17
-                }
-              ],
-              "location": "stepdefinitions.SelectStepDef.kullanici_select(java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 38000000,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "user Assert that the \"Monday\" has selected",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Monday\"",
-                  "offset": 21
-                }
-              ],
-              "location": "stepdefinitions.SelectStepDef.userAssertThatTheHasSelected(java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@seleniumeasy02"
-          },
-          {
-            "name": "@TC002"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2021-03-21T20:45:00.694Z",
-        "line": 18,
-        "name": "Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown\u0027dan tum gunleri secebildilgini dogrulamalidir.",
-        "description": "",
-        "id": "select-list;kullanici--select-list-demo-basligi-altindaki-select-a-day-(select-one):-dropdown-dan-tum-gunleri-secebildilgini-dogrulamalidir.;;4",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 240000000,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "Kullanici select \"Tuesday\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Tuesday\"",
-                  "offset": 17
-                }
-              ],
-              "location": "stepdefinitions.SelectStepDef.kullanici_select(java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 51000000,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "user Assert that the \"Tuesday\" has selected",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Tuesday\"",
-                  "offset": 21
-                }
-              ],
-              "location": "stepdefinitions.SelectStepDef.userAssertThatTheHasSelected(java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@seleniumeasy02"
-          },
-          {
-            "name": "@TC002"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2021-03-21T20:45:00.990Z",
-        "line": 19,
-        "name": "Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown\u0027dan tum gunleri secebildilgini dogrulamalidir.",
-        "description": "",
-        "id": "select-list;kullanici--select-list-demo-basligi-altindaki-select-a-day-(select-one):-dropdown-dan-tum-gunleri-secebildilgini-dogrulamalidir.;;5",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 267000000,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "Kullanici select \"Wednesday\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Wednesday\"",
-                  "offset": 17
-                }
-              ],
-              "location": "stepdefinitions.SelectStepDef.kullanici_select(java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 34000000,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "user Assert that the \"Wednesday\" has selected",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Wednesday\"",
-                  "offset": 21
-                }
-              ],
-              "location": "stepdefinitions.SelectStepDef.userAssertThatTheHasSelected(java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@seleniumeasy02"
-          },
-          {
-            "name": "@TC002"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2021-03-21T20:45:01.297Z",
-        "line": 20,
-        "name": "Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown\u0027dan tum gunleri secebildilgini dogrulamalidir.",
-        "description": "",
-        "id": "select-list;kullanici--select-list-demo-basligi-altindaki-select-a-day-(select-one):-dropdown-dan-tum-gunleri-secebildilgini-dogrulamalidir.;;6",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 329000000,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "Kullanici select \"Thursday\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Thursday\"",
-                  "offset": 17
-                }
-              ],
-              "location": "stepdefinitions.SelectStepDef.kullanici_select(java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 21000000,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "user Assert that the \"Thursday\" has selected",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Thursday\"",
-                  "offset": 21
-                }
-              ],
-              "location": "stepdefinitions.SelectStepDef.userAssertThatTheHasSelected(java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@seleniumeasy02"
-          },
-          {
-            "name": "@TC002"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2021-03-21T20:45:01.653Z",
-        "line": 21,
-        "name": "Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown\u0027dan tum gunleri secebildilgini dogrulamalidir.",
-        "description": "",
-        "id": "select-list;kullanici--select-list-demo-basligi-altindaki-select-a-day-(select-one):-dropdown-dan-tum-gunleri-secebildilgini-dogrulamalidir.;;7",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 267000000,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "Kullanici select \"Friday\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Friday\"",
-                  "offset": 17
-                }
-              ],
-              "location": "stepdefinitions.SelectStepDef.kullanici_select(java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 25000000,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "user Assert that the \"Friday\" has selected",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Friday\"",
-                  "offset": 21
-                }
-              ],
-              "location": "stepdefinitions.SelectStepDef.userAssertThatTheHasSelected(java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@seleniumeasy02"
-          },
-          {
-            "name": "@TC002"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2021-03-21T20:45:01.950Z",
-        "line": 22,
-        "name": "Kullanici, Select List Demo basligi altindaki Select a day (select one): dropDown\u0027dan tum gunleri secebildilgini dogrulamalidir.",
-        "description": "",
-        "id": "select-list;kullanici--select-list-demo-basligi-altindaki-select-a-day-(select-one):-dropdown-dan-tum-gunleri-secebildilgini-dogrulamalidir.;;8",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 283000000,
-              "status": "passed"
-            },
-            "line": 12,
-            "name": "Kullanici select \"Saturday\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Saturday\"",
-                  "offset": 17
-                }
-              ],
-              "location": "stepdefinitions.SelectStepDef.kullanici_select(java.lang.String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 31000000,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "user Assert that the \"Saturday\" has selected",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Saturday\"",
-                  "offset": 21
-                }
-              ],
-              "location": "stepdefinitions.SelectStepDef.userAssertThatTheHasSelected(java.lang.String)"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@seleniumeasy02"
-          },
-          {
-            "name": "@TC002"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2021-03-21T20:45:02.269Z",
-        "line": 25,
-        "name": "User select a day",
-        "description": "",
-        "id": "select-list;user-select-a-day",
+        "id": "user-is-on-the-webtables;kullanici-table-pagination-sayfasindadir",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 251000000,
+              "duration": 398000000,
               "status": "passed"
             },
-            "line": 26,
-            "name": "User select \"Friday\"",
+            "line": 14,
+            "name": "The user clicks on Table Pagination",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"Friday\"",
-                  "offset": 12
-                }
-              ],
-              "location": "stepdefinitions.SelectStepDef.user_select(java.lang.String)"
+              "location": "stepdefinitions.Us06_TableStepDef.the_user_clicks_on_Table_Pagination()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 33000000,
+              "duration": 61000000,
               "status": "passed"
             },
-            "line": 27,
-            "name": "user Assert that the select day is \"Friday\"",
+            "line": 15,
+            "name": "Kullanici # satirinin \"1\" ile basladigini assert eder",
             "match": {
               "arguments": [
                 {
-                  "val": "\"Friday\"",
-                  "offset": 35
+                  "val": "\"1\"",
+                  "offset": 22
                 }
               ],
-              "location": "stepdefinitions.SelectStepDef.user_Assert_that_the_select_day_is(java.lang.String)"
+              "location": "stepdefinitions.Us06_TableStepDef.kullanici_satirinin_ile_basladigini_assert_eder(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 105000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "Kullanici ikinci. sayfa linkine tiklar",
+            "match": {
+              "location": "stepdefinitions.Us06_TableStepDef.kullanici_ikinci_sayfa_linkine_tiklar()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 43000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "Kullanici ikinci. sayfanin  # satirinin \"6\" ile basladigini assert eder",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"6\"",
+                  "offset": 40
+                }
+              ],
+              "location": "stepdefinitions.Us06_TableStepDef.kullanici_ikinci_sayfanin_satirinin_ile_basladigini_assert_eder(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 109000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "Kullanici ucuncu.sayfanin linkine tiklar",
+            "match": {
+              "location": "stepdefinitions.Us06_TableStepDef.kullanici_ucuncu_sayfanin_linkine_tiklar()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 46000000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "Kullanici ucuncu sayfa  # satirinin \"11\" ile basladigini assert eder",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"11\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepdefinitions.Us06_TableStepDef.kullanici_ucuncu_sayfa_satirinin_ile_basladigini_assert_eder(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 109000000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "Kullanici tekrar birinci sayfaya doner",
+            "match": {
+              "location": "stepdefinitions.Us06_TableStepDef.kullaniciTekrarBirinciSayfayaDoner()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 92000000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "Kullanici ileri sayfa linkine tiklar",
+            "match": {
+              "location": "stepdefinitions.Us06_TableStepDef.kullanici_ileri_sayfa_linkine_tiklar()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 23000000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "Kullanici # satirinin ilk hucresinin \"6\" ile basladigini assert eder",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"6\"",
+                  "offset": 37
+                }
+              ],
+              "location": "stepdefinitions.Us06_TableStepDef.kullanici_satirinin_ilk_hucresinin_ile_basladigini_assert_eder(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 73000000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "Kullanici geri sayfa linkine tiklar",
+            "match": {
+              "location": "stepdefinitions.Us06_TableStepDef.kullanici_geri_sayfa_linkine_tiklar()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 88000000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "Kullanici # satirinin birinci hucresinin \"1\" ile basladigini assert eder",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"1\"",
+                  "offset": 41
+                }
+              ],
+              "location": "stepdefinitions.Us06_TableStepDef.kullanici_satirinin_birinci_hucresinin_ile_basladigini_assert_eder(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 22000000,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "Kullanici toplam 91 cell oldugunu assert eder",
+            "match": {
+              "arguments": [
+                {
+                  "val": "91",
+                  "offset": 17
+                }
+              ],
+              "location": "stepdefinitions.Us06_TableStepDef.kullanici_toplam_cell_oldugunu_assert_eder(java.lang.Integer)"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "name": "@seleniumeasy02"
+            "name": "@seleniumeasy06"
+          },
+          {
+            "name": "@TC002"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-03-23T14:06:02.328Z",
+        "line": 28,
+        "name": "Kullanici table data search sayfasindadir",
+        "description": "",
+        "id": "user-is-on-the-webtables;kullanici-table-data-search-sayfasindadir",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 403000000,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "Kullanici table data search linkine tiklar",
+            "match": {
+              "location": "stepdefinitions.Us06_TableStepDef.kullanici_table_data_search_linkine_tiklar()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2150000000,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "Kullanici Tasks panelinin altinda sirasiyla Task, Assignee, Status basliklarinin oldugunu dogrular.",
+            "match": {
+              "location": "stepdefinitions.Us06_TableStepDef.kullanici_Tasks_panelinin_altinda_sirasiyla_Task_Assignee_Status_basliklarinin_oldugunu_dogrular()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 46000000,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "Kullanici input\u0027ta Filter by Task,Assignee,Status textinin yer aldigini dogrular",
+            "match": {
+              "location": "stepdefinitions.Us06_TableStepDef.kullanici_input_ta_Filter_by_Task_Assignee_Status_textinin_yer_aldigini_dogrular()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 170000000,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "Kullanici input\u0027a \"Mike\" yazar",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Mike\"",
+                  "offset": 18
+                }
+              ],
+              "location": "stepdefinitions.Us06_TableStepDef.kullanici_input_a_yazar(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 85000000,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "Kullanici tabloda sadece bir satir oldugunu ve bu satirin \"Mike\" ismine ait oldugunu assert eder",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Mike\"",
+                  "offset": 58
+                }
+              ],
+              "location": "stepdefinitions.Us06_TableStepDef.kullanici_tabloda_sadece_bir_satir_oldugunu_ve_bu_satirin_ismine_ait_oldugunu_assert_eder(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@seleniumeasy06"
           },
           {
             "name": "@TC003"
           }
         ]
+      },
+      {
+        "start_timestamp": "2021-03-23T14:06:05.194Z",
+        "line": 36,
+        "name": "Listed Users tablosunda filtreleme yapar",
+        "description": "",
+        "id": "user-is-on-the-webtables;listed-users-tablosunda-filtreleme-yapar",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 203000000,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "Kullanici Listed Users panelinin aldindaki 4 tane input\u0027un aktif olmadigini assert eder",
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 43
+                }
+              ],
+              "location": "stepdefinitions.Us06_TableStepDef.kullanici_Listed_Users_panelinin_aldindaki_tane_input_un_aktif_olmadigini_assert_eder(java.lang.Integer)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 114000000,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "Kullanici filtre butonuna basar",
+            "match": {
+              "location": "stepdefinitions.Us06_TableStepDef.kullanici_filtre_butonuna_basar()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 108000000,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "Kullanici firstname inputune \"B\" harfi girer",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"B\"",
+                  "offset": 29
+                }
+              ],
+              "location": "stepdefinitions.Us06_TableStepDef.kullanici_firstname_inputune_harfi_girer(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:86)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat org.junit.Assert.assertTrue(Assert.java:52)\r\n\tat stepdefinitions.Us06_TableStepDef.kullanici_tablo_da_B_harfi_ile_baslayan_iki_isime_ait_satirlari_gorur(Us06_TableStepDef.java:148)\r\n\tat ✽.Kullanici tablo\u0027da B harfi ile baslayan iki isime ait satirlari gorur(file:///C:/Users/ibrahim/IdeaProjects/MyFramework01/src/test/resources/features/seleniumeasy06.feature:40)\r\n",
+              "duration": 59000000,
+              "status": "failed"
+            },
+            "line": 40,
+            "name": "Kullanici tablo\u0027da B harfi ile baslayan iki isime ait satirlari gorur",
+            "match": {
+              "location": "stepdefinitions.Us06_TableStepDef.kullanici_tablo_da_B_harfi_ile_baslayan_iki_isime_ait_satirlari_gorur()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@seleniumeasy06"
+          },
+          {
+            "name": "@TC004"
+          }
+        ]
       }
     ],
-    "name": "Select List",
+    "name": "User is on the Webtables",
     "description": "",
-    "id": "select-list",
+    "id": "user-is-on-the-webtables",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/seleniuleasy02.feature",
+    "uri": "file:src/test/resources/features/seleniumeasy06.feature",
     "tags": [
       {
-        "name": "@seleniumeasy02",
+        "name": "@seleniumeasy06",
         "type": "Tag",
         "location": {
           "line": 1,

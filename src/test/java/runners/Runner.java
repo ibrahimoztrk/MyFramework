@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@seleniumeasy02",
+        tags = "@seleniumeasy06",
         dryRun = false
 )
 public class Runner {
