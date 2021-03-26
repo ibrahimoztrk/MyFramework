@@ -18,7 +18,7 @@ public class JsonUtil {
     public static String convertJavaToJson(Object object) {
         String jsonResult = "";
         try {
-            jsonResult = mapper.writeValueAsString(object);
+            jsonResult = mapper.writeValueAsString(object  );
         } catch (JsonGenerationException e) {
             System.out.println("Java objectini Jsona cevirirken exception olustu." + e.getMessage());
         } catch (JsonMappingException e) {
