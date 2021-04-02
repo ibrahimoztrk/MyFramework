@@ -1,11 +1,11 @@
-package stepdefinitions;
+package UI_tests;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
-import pages.US06_TablePage;
+import UI_pages.US06_TablePage;
 import utilities.BrowserUtils;
 
 public class SEasyUS_06 extends BrowserUtils {

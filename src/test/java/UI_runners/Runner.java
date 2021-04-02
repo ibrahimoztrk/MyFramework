@@ -1,4 +1,4 @@
-package runners;
+package UI_runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber.xml"
         },
         features = "src/test/resources/features",
-        glue = "stepdefinitions",
+        glue = "UI_tests",
         tags = "@seleniumueasy04",
         dryRun = false
 

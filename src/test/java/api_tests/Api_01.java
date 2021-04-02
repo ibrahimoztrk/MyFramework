@@ -32,7 +32,11 @@ public class Api_01 {
     public void name() throws IOException {
         SoftAssert softAssert = new SoftAssert();
         response = getResponse(endPoint);
-        response.then().assertThat().statusCode(200);
+        response.
+                then().
+                assertThat().
+                statusCode(200);
+       // response.prettyPrint();
 
         json = response.jsonPath();
         String start = json.getString("start_at");

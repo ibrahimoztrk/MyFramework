@@ -83,7 +83,49 @@ where company_name like '%u%e%'
 
 select supplier_id
 from suppliers 
-where company_name like '%e%u%']]></console>
+where company_name like '%e%u%'
+
+
+select country
+from suppliers
+where country ilike  'u_%_%';
+
+select last_name
+from employees
+where city like '___o%';
+
+select extension, first_name
+from employees
+where extension not like '___' and first_name not like 'Robert';
+
+select product_name, quantity_per_unit  , supplier_id
+from products
+where product_name not like '____' and quantity_per_unit like '3%' and supplier_id=2;
+
+
+select product_name, quantity_per_unit
+from products
+where product_name not like '____' or quantity_per_unit like '3%';
+
+
+select unit_price, reorder_level
+from products
+Where unit_price > (select avg(unit_price)
+from products) and reorder_level >9;
+
+select  Count(product_id) as urun_sayisi
+from products
+Where exists (select category_id
+               from categories 
+                where categories.category_id = products.product_id)
+
+
+
+
+
+
+select avg(unit_price)
+from products]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

@@ -1,15 +1,13 @@
-package stepdefinitions;
+package UI_tests;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.junit.Test;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import pages.SePage01;
-import pages.SelectPage;
+import UI_pages.SePage01;
+import UI_pages.SelectPage;
 import utilities.BrowserUtils;
 
 import java.util.List;

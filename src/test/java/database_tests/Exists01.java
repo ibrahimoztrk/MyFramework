@@ -1,4 +1,4 @@
-package database;
+package database_tests;
 
 
 import org.junit.Test;
@@ -7,7 +7,7 @@ import utilities.DatabaseConnector;
 import java.util.List;
 import java.util.Map;
 
-public class Test01 {
+public class Exists01 {
 
 
     @Test

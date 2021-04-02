@@ -1,12 +1,11 @@
-package stepdefinitions;
+package UI_tests;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import pages.SEasyAlertPage;
+import UI_pages.SEasyAlertPage;
 import utilities.BrowserUtils;
 import utilities.Driver;
-import utilities.ReusableMethods;
 
 public class SEasyUS_03 extends BrowserUtils {
     SEasyAlertPage sEasyAlertPage = new SEasyAlertPage();

@@ -1,9 +1,9 @@
-package stepdefinitions;
+package UI_tests;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import pages.SePage01;
+import UI_pages.SePage01;
 import utilities.Driver;
 import utilities.ReusableMethods;
 

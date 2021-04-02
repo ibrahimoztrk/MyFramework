@@ -1,4 +1,4 @@
-package stepdefinitions;
+package UI_tests;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -6,8 +6,8 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
-import pages.SEasyForm_List_Page;
-import pages.SePage01;
+import UI_pages.SEasyForm_List_Page;
+import UI_pages.SePage01;
 import utilities.BrowserUtils;
 import utilities.Driver;
 
