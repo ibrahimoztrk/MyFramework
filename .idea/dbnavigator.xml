@@ -26,14 +26,14 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="1c9553af-9012-4cc1-9e43-169bec8b238f">
-        <schema name="pg_catalog" object-types="function, view, table" />
-        <schema name="public" object-types="function, view, table" />
+        <schema name="pg_catalog" object-types="table, view, function" />
+        <schema name="public" object-types="column, table, view, function" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1c9553af-9012-4cc1-9e43-169bec8b238f">
-      <console name="Connection" type="STANDARD" schema="public" session="Main">select employees.first_name || employees.last_name as adi_soyadi, COUNT (suppliers.company_name)
+      <console name="Connection" type="STANDARD" schema="public" session="Main"><![CDATA[select employees.first_name || employees.last_name as adi_soyadi, COUNT (suppliers.company_name)
 From suppliers
 join products on suppliers.supplier_id = products.supplier_id
 join order_details on products.product_id=order_details.product_id
@@ -56,13 +56,34 @@ group by employees.first_name, employees.last_name order by count(suppliers.comp
 select AVG(satis_sayisi) as ortalama from Empl_satisMiktari;
 
 
-select * from Empl_satisMiktari where satis_sayisi &lt; (select AVG(satis_sayisi) as ortalama from Empl_satisMiktari) ;
+select * from Empl_satisMiktari where satis_sayisi < (select AVG(satis_sayisi) as ortalama from Empl_satisMiktari) ;
 
 --
 --//her bir employeenin kac firmaya satis yaptigini bulunuz?
 --(kullanilacak tablolar: employees, orders, order_details,products,suppliers)
 --ortalamanin altinda satis yapan employee sayisi 4 tür.(ortamala hesaplarima göre 239,4 cikti)
---(bu soruyu cözerken subquery kullanmak isteyebilirsiniz)</console>
+--(bu soruyu cözerken subquery kullanmak isteyebilirsiniz)
+
+select company_name
+from Suppliers
+WHERE company_name like 'L%';
+
+select company_name
+from Suppliers
+WHERE company_name like '%a%';
+
+select company_name
+from Suppliers
+WHERE company_name like 'a%';
+
+select supplier_id
+from suppliers 
+where company_name like '%u%e%'
+
+
+select supplier_id
+from suppliers 
+where company_name like '%e%u%']]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

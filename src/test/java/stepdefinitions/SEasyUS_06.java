@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import pages.US06_TablePage;
 import utilities.BrowserUtils;
 
-public class Us06_TableStepDef extends BrowserUtils {
+public class SEasyUS_06 extends BrowserUtils {
 
     US06_TablePage us06 = new US06_TablePage();
 

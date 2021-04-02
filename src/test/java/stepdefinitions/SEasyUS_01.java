@@ -7,7 +7,7 @@ import pages.SePage01;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class SEasyStepDef01 extends ReusableMethods {
+public class SEasyUS_01 extends ReusableMethods {
     SePage01 sePage01 = new SePage01();
 
 
@@ -16,12 +16,15 @@ public class SEasyStepDef01 extends ReusableMethods {
     public void the_user_is_on_the_page_of(String string) {
         Driver.getDriver().get(string);
 
+
     }
 
     @Given("The user clicks on the Start Practicing")
     public void the_user_clicks_on_the_Start_Practicing() {
         sePage01.startButton.click();
+//        sePage01.popUpMessage.click();
     }
+
 
     @Given("The user clicks on the Simple Form Demo")
     public void the_user_clicks_on_the_Simple_Form_Demo() {

@@ -26,6 +26,13 @@ Feature: Select List
       Given User select "Friday"
       Then user Assert that the select day is "Friday"
 
+      @TC004
+      Scenario: User select from multi select list
+        Given User select all citys
+        And The user clicks on Get All Selected button
+        Then user Assert that "Options selected are" message is displayed
+
+
 
 
 

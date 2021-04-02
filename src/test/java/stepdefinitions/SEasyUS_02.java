@@ -4,14 +4,21 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pages.SePage01;
 import pages.SelectPage;
+import utilities.BrowserUtils;
 
-public class SelectStepDef {
+import java.util.List;
+
+public class SEasyUS_02 extends BrowserUtils {
 
     SelectPage selectPage = new SelectPage();
     SePage01 sePage01 = new SePage01();
+    Actions actions;
 
 
     @Given("The user clicks on the on Select Dropdown List")
@@ -43,5 +50,28 @@ public class SelectStepDef {
     public void user_Assert_that_the_select_day_is(String string) {
         Assert.assertTrue(selectPage.daySelectedValue.getText().contains(string));
     }
+
+    @Given("User select all citys")
+    public void user_select_all_citys() {
+        Select option = new Select(selectPage.multiSelect);
+        List<WebElement> options = option.getOptions();
+
+        for (WebElement w : options) {
+            w.click();
+        }
+
+
+    }
+
+    @Given("The user clicks on Get All Selected button")
+    public void the_user_clicks_on_Get_All_Selected_button() {
+        selectPage.getAllSelectButton.click();
+    }
+
+    @Then("user Assert that {string} message is displayed")
+    public void user_Assert_that_message_is_displayed(String string) {
+        verifyElementDisplayed(selectPage.multiSelectMessage);
+    }
+
 
 }

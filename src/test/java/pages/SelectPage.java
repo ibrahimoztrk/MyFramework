@@ -20,5 +20,15 @@ public class SelectPage {
     public WebElement selectDay;
     @FindBy(xpath="//p[@class='selected-value']")
     public WebElement daySelectedValue;
+    @FindBy(id="multi-select")
+    public WebElement multiSelect;
+    @FindBy(id = "printAll")
+    public WebElement getAllSelectButton;
+    @FindBy(xpath=" //p[@class='getall-selected']")
+    public WebElement multiSelectMessage;
+
+
+
+
 
 }
