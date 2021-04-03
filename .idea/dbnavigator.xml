@@ -26,15 +26,16 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="1c9553af-9012-4cc1-9e43-169bec8b238f">
-        <schema name="pg_catalog" object-types="table, view, function" />
+        <schema name="information_schema" object-types="column, table, view, sequence, constraint, dataset trigger, index, function" />
+        <schema name="pg_catalog" object-types="table, view, sequence, function" />
         <schema name="public" object-types="column, table, view, function" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1c9553af-9012-4cc1-9e43-169bec8b238f">
-      <console name="Connection" type="STANDARD" schema="public" session="Main"><![CDATA[select employees.first_name || employees.last_name as adi_soyadi, COUNT (suppliers.company_name)
-From suppliers
+      <console name="Connection" type="STANDARD" schema="public" session="Main"><![CDATA[select employees.first_name || employees.last_name as adi_soyadi, count (suppliers.company_name)
+from suppliers
 join products on suppliers.supplier_id = products.supplier_id
 join order_details on products.product_id=order_details.product_id
 join orders on order_details.order_id = orders.order_id
@@ -53,10 +54,10 @@ join orders on order_details.order_id=orders.order_id
 join employees on orders.employee_id=employees.employee_id
 group by employees.first_name, employees.last_name order by count(suppliers.company_name) desc;
 
-select AVG(satis_sayisi) as ortalama from Empl_satisMiktari;
+select avg(satis_sayisi) as ortalama from Empl_satisMiktari;
 
 
-select * from Empl_satisMiktari where satis_sayisi < (select AVG(satis_sayisi) as ortalama from Empl_satisMiktari) ;
+select * from Empl_satisMiktari where satis_sayisi < (select avg(satis_sayisi) as ortalama from Empl_satisMiktari) ;
 
 --
 --//her bir employeenin kac firmaya satis yaptigini bulunuz?
@@ -66,15 +67,15 @@ select * from Empl_satisMiktari where satis_sayisi < (select AVG(satis_sayisi) a
 
 select company_name
 from Suppliers
-WHERE company_name like 'L%';
+where company_name like 'L%';
 
 select company_name
 from Suppliers
-WHERE company_name like '%a%';
+where company_name like '%a%';
 
 select company_name
 from Suppliers
-WHERE company_name like 'a%';
+where company_name like 'a%';
 
 select supplier_id
 from suppliers 
@@ -110,12 +111,12 @@ where product_name not like '____' or quantity_per_unit like '3%';
 
 select unit_price, reorder_level
 from products
-Where unit_price > (select avg(unit_price)
+where unit_price > (select avg(unit_price)
 from products) and reorder_level >9;
 
-select  Count(product_id) as urun_sayisi
+select  count(product_id) as urun_sayisi
 from products
-Where exists (select category_id
+where exists (select category_id
                from categories 
                 where categories.category_id = products.product_id)
 
@@ -124,8 +125,63 @@ Where exists (select category_id
 
 
 
-select avg(unit_price)
-from products]]></console>
+select avg(unit_price) ortalama_fiyat
+from products
+
+
+select count(category_name) total_product
+from categories 
+join products on products.product_id = categories.category_id
+
+
+
+
+select contact_title, region 
+from customers
+where contact_title = 'Owner' and region is null
+
+
+
+
+select product_name , category_name
+from categories
+join products on products.product_id = categories.category_id
+where category_name = 'Seafood'
+
+
+--supliers ülkesi almanya olan ülkelerin product name.leri nedir?                                                                                                             
+-- suppliers ve products tabloları kullanılacak, 3 adet ürün listelenecek.
+
+select country, product_name
+from suppliers 
+join products on suppliers.supplier_id = products.product_id
+where suppliers.country = 'Germany'
+
+
+--suppliers region.u 'OR' olan product name.leri nedir?                                                                                                                                                                    
+--suppliers ve products tabloları kullanılacak, 3 adet ürün listelendigini dogrulayiniz.
+
+select region, product_name
+from suppliers
+join products on suppliers.supplier_id = products.product_id
+where suppliers.region='OR'
+
+--customers tablosunda sehri London olan musteri sayisi, sehri Berlin olan musteri saysindan fazladir.
+
+select city,count(*) sehir_sayisi
+from customers
+where city = 'London'
+group by city
+
+
+select *
+from products 
+ left join categories on products.product_id = categories.category_id
+ where categories.category_id is null 
+ 
+ 
+select distinct city
+from customers]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
