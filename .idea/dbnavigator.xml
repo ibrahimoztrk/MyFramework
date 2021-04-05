@@ -179,9 +179,28 @@ from products
  left join categories on products.product_id = categories.category_id
  where categories.category_id is null 
  
+ --Customers tablosunda 69 farakli city vardir
  
 select distinct city
-from customers]]></console>
+from customers
+
+
+
+--Products tablosunda kac farkli ürün vardir.(77 üürn oldugunu dogrulayiniz)
+
+select distinct products
+from products
+
+
+--her bir kategori id'ye göre kaç tane ürün olduğunu gösteren tabloyu yazalim. 
+--category basina düsen ortalama ürün sayisi 7,25 dir.
+
+select *
+from products
+
+select categories.category_id, products.category_id, categories.category_name, products.product_name
+from categories
+join products on products.category_id= categories.category_id]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

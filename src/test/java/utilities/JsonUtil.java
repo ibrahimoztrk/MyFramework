@@ -1,5 +1,7 @@
 package utilities;
 
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
@@ -7,7 +9,11 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.IOException;
 
+import static io.restassured.RestAssured.given;
+
 public class JsonUtil {
+
+    Response response;
 
     private static ObjectMapper mapper;
 
@@ -44,6 +50,15 @@ public class JsonUtil {
 
     }
 
+     public static Response responseMethod(String url){
+         Response response = given().
+                 accept(ContentType.JSON).
+                 when().
+                 get(url);
+       //  response.prettyPrint();
+
+         return response;
+     }
     // List data convert json to java
 
     // Customer[] allCustomer = mapper.readValue(json, Customer[].class);
