@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "UI_tests",
-        tags = "@seleniumueasy04",
+        tags = "@seleniumeasy06",
         dryRun = false
 
 )

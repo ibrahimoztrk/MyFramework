@@ -22,7 +22,7 @@ public class SEasyDataDownPage {
     public WebElement startButton;
     @FindBy(linkText = "Table")
     public WebElement tableButton;
-    @FindBy(xpath = "(//tr[@role = 'row']/td[3])")
+    @FindBy(xpath = "(//tr[@role ='row']/td[3])")
     public List<WebElement> cityColumn;
 
 

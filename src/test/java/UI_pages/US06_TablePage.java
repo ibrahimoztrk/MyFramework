@@ -73,7 +73,7 @@ public class US06_TablePage {
     public WebElement noThanks;
     @FindBy(xpath = "(//tbody)[1]")
     public List<WebElement> queryMike;
-    @FindBy(xpath = "(//tbody)[2]")
+    @FindBy(xpath = "//tr[@style='display: table-row;']/td[3]")
     public List<WebElement> queryB;
 
     //(//tbody)[2]

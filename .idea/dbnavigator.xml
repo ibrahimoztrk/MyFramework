@@ -24,7 +24,12 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="1c9553af-9012-4cc1-9e43-169bec8b238f">
+        <schema name="pg_catalog" object-types="table, function, view" />
+        <schema name="public" object-types="table, column, function, view" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1c9553af-9012-4cc1-9e43-169bec8b238f">
@@ -59,54 +64,71 @@ select * from Empl_satisMiktari where satis_sayisi < (select avg(satis_sayisi) a
 --ortalamanin altinda satis yapan employee sayisi 4 tür.(ortamala hesaplarima göre 239,4 cikti)
 --(bu soruyu cözerken subquery kullanmak isteyebilirsiniz)
 
+
+--1)	L ile baslayan 2 adet kayit vardir.
 select company_name
 from Suppliers
 where company_name like 'L%';
 
+
+--2)	Icerisinde ‘a’ olan 23 kayit vardir.
 select company_name
 from Suppliers
 where company_name like '%a%';
 
+
+--3)	‘a’ ile baslayan hic bir kayit yoktur.
 select company_name
 from Suppliers
 where company_name like 'a%';
 
+
+--5)	Icerisinde önce ‘u’ sonra ‘e’ gecen 6 kayit vardir(harflerin bitisik olma kosulu zorunlu degildir)
 select supplier_id
 from suppliers 
 where company_name like '%u%e%'
 
-
-select supplier_id
+--6)	Icerisinde önce ‘e’ sonra ‘u’ gecen 5 kayit vardir(harflerin bitisik olma kosulu zorunlu degildir)select supplier_id
 from suppliers 
 where company_name like '%e%u%'
 
 
+--7)	Suppliers tablosunda country si ‘U’ ile baslayan en az üc harfli kayitlarin hepsi ‘USA’ dir
 select country
 from suppliers
 where country ilike  'u_%_%';
 
+--2)	Employees tablosunda city ‘ sinin 4. Harfi ‘o’ olan bir kayidin last_name’i ‘Fuller’ dir.
 select last_name
 from employees
 where city like '___o%';
 
+--1)	Employees tablosunda extension degerleri 3 karakterli olmayan degerleri bulalim.
+ --Bunlardan hic birinin first_name ‘i ‘Robert’ degildir.
 select extension, first_name
 from employees
 where extension not like '___' and first_name not like 'Robert';
 
+--2)	Products tablosunda product_name’i 4 harfli olmayan ve quantity_per_unit’i  ‘3’ ile baslayan kayitlardan ikisinin supplier_id si 2 dir.
+--(Ayni sorgu icerisinde aralarina ‘and’ koyarak hem LIKE hem de NOT LIKE kullanabilirsiniz.)
 select product_name, quantity_per_unit  , supplier_id
 from products
 where product_name not like '____' and quantity_per_unit like '3%' and supplier_id=2;
 
-
+--3)	Products tablosunda product_name’i 4 harfli olmayan veya quantity_per_unit’i 
+ --‘3’ ile baslayan 75 adet kayit bulunmaktadir.
 select product_name, quantity_per_unit
 from products
 where product_name not like '____' or quantity_per_unit like '3%';
 
-
+--Products tablosunda ortalama unit_price’ nin üzerinde fiyata sahip olan 25 adet kayit vardir.
+ --Bunlardan reorder_level’i en az iki digit iceren 9 kayit vardir.(dikkat etmemiz gerek,
+ --eger data tipi integer ise LIKE komutu kullanamayiz, sayisal verilerle calismaliyiz)
 select unit_price, reorder_level
 from products
 where unit_price > (select avg(unit_price)
 from products) and reorder_level >9;
+
 
 select  count(product_id) as urun_sayisi
 from products
@@ -194,7 +216,46 @@ from products
 
 select categories.category_id, products.category_id, categories.category_name, products.product_name
 from categories
-join products on products.category_id= categories.category_id]]></console>
+join products on products.category_id= categories.category_id 
+
+
+--ismi A ile başlayan employees.ler kimlerdir ve bu zamana kadar kac urun sattilar
+
+select first_name,  sum(quantity)
+from employees
+join orders on orders.employee_id= employees.employee_id
+join order_details on orders.order_id = order_details.order_id
+where first_name Like 'A%'
+group by first_name
+
+--customers tablosunda sehri Berlin olan en az bir musteri vardir.
+
+select city, customer_id
+from customers
+where city = 'Berlin'
+
+--Customers tablosunda 69 farakli city vardir
+
+select count (distinct city) as total_city
+from customers
+
+
+ -- //Products tablosunda kac farkli ürün vardir.(77 üürn oldugunu dogrulayiniz)
+ 
+ select count(product_id)
+ from products
+ 
+ --her bir kategori id'ye göre kaç tane ürün olduğunu gösteren tabloyu yazalim. 
+ --category basina düsen ortalama ürün sayisi 7,25 dir.
+ 
+ 
+select products.category_id , count (product_name)
+from products
+group by products.category_id
+
+select p.product_id, product_name, od.order_id
+from products p
+ left join order_details od on od.product_id = p.product_id]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

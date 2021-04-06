@@ -1,5 +1,6 @@
 package database_tests;
 
+import io.cucumber.java.sl.In;
 import org.junit.Assert;
 import org.junit.Test;
 import utilities.DatabaseConnector;
@@ -119,14 +120,46 @@ public class ProductsQuery {
 
     @Test
     public void name7() {
+        //-customers tablosunda sehri Berlin olan en az bir musteri vardir.
 
-        String query = "select distinct city\n" +
-                "from customers";
+        String query = "\n" +
+                "select city, customer_id\n" +
+                "from customers\n" +
+                "where city = 'Berlin'";
 
         List<Map<String,String>> mydata = DatabaseConnector.getQueryResultWithAListMap(query);
         System.out.println(mydata.size());
+        Assert.assertTrue(mydata.size()==1);
+
 
 
     }
+
+    @Test
+    public void name8() {
+
+
+        //--Customers tablosunda 69 farakli city vardir
+
+      String query = "select count (distinct city) as total_city\n" +
+              "from customers";
+
+      List<Map<String, String>> mydata = DatabaseConnector.getQueryResultWithAListMap(query);
+     Assert.assertTrue(mydata.get(0).get("total_city").equals("69"));
+
+    }
+
+    @Test
+    public void name9() {
+           //Products tablosunda kac farkli ürün vardir.(77 üürn oldugunu dogrulayiniz)
+
+        String query = " \n" +
+                " select count(product_id)\n" +
+                " from products";
+
+        List<Map<String, String>> mydata = DatabaseConnector.getQueryResultWithAListMap(query);
+        Assert.assertTrue(mydata.get(0).get("count").equals("77"));
+    }
+
 
 }

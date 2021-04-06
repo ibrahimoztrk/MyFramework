@@ -1,24 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="16.457">
-<testcase classname="Bootstrap List" name="the user fill Ajax form" time="9.982">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="29.013">
+<testcase classname="User is on the Webtables" name="user is on the home page" time="13.196">
 <system-out><![CDATA[Given The user is on the page of "https://www.seleniumeasy.com/test/".......passed
-Given The user clicks on the Start Practicing...............................passed
-Given The user clicks on Input Forms button.................................passed
-And The user clicks on Ajax form submit box button..........................passed
-Given the user enter name "Garry"...........................................passed
-And the user enter Comment "Hi I'm here"....................................passed
-And the user clicks submit button...........................................passed
-Then the user verify that succes message displayed..........................passed
+And The user clicks on the Start Practicing.................................passed
+And The user clicks on the Table............................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Bootstrap List" name="the user changes the items" time="5.548">
-<system-out><![CDATA[Given The user is on the page of "https://www.seleniumeasy.com/test/".......passed
-Given The user clicks on the Start Practicing...............................passed
-Given user clicks List Box button...........................................passed
-And user clicks Bootstrap List Box..........................................passed
-And user moves the item bootstrap-duallist to the right.....................passed
-And user moves the item Cras justo odio to the left.........................passed
-Then user assert that movement is succesfull................................passed
+<testcase classname="User is on the Webtables" name="Kullanici Table Pagination sayfasindadir" time="1.371">
+<system-out><![CDATA[Given The user clicks on Table Pagination...................................passed
+And Kullanici # satirinin "1" ile basladigini assert eder...................passed
+And Kullanici ikinci. sayfa linkine tiklar..................................passed
+And Kullanici ikinci. sayfanin  # satirinin "6" ile basladigini assert eder.passed
+And Kullanici ucuncu.sayfanin linkine tiklar................................passed
+And Kullanici ucuncu sayfa  # satirinin "11" ile basladigini assert eder....passed
+And Kullanici tekrar birinci sayfaya doner..................................passed
+And Kullanici ileri sayfa linkine tiklar....................................passed
+And Kullanici # satirinin ilk hucresinin "6" ile basladigini assert eder....passed
+And Kullanici geri sayfa linkine tiklar.....................................passed
+And Kullanici # satirinin birinci hucresinin "1" ile basladigini assert eder.passed
+Then Kullanici toplam 91 cell oldugunu assert eder..........................passed
+]]></system-out>
+</testcase>
+<testcase classname="User is on the Webtables" name="Kullanici table data search sayfasindadir" time="2.809">
+<system-out><![CDATA[Given Kullanici table data search linkine tiklar............................passed
+And Kullanici Tasks panelinin altinda sirasiyla Task, Assignee, Status basliklarinin oldugunu dogrular..passed
+And Kullanici input'ta Filter by Task,Assignee,Status textinin yer aldigini dogrular.passed
+And Kullanici input'a "Mike" yazar..........................................passed
+Then Kullanici tabloda sadece bir satir oldugunu ve bu satirin "Mike" ismine ait oldugunu assert eder.passed
+]]></system-out>
+</testcase>
+<testcase classname="User is on the Webtables" name="Listed Users tablosunda filtreleme yapar" time="10.477">
+<system-out><![CDATA[Given Kullanici Listed Users panelinin aldindaki 4 tane input'un aktif olmadigini assert eder.passed
+And Kullanici filtre butonuna basar.........................................passed
+And Kullanici firstname inputune "B" harfi girer............................passed
+Then Kullanici tablo'da B harfi ile baslayan iki isime ait satirlari gorur..passed
 ]]></system-out>
 </testcase>
 </testsuite>
