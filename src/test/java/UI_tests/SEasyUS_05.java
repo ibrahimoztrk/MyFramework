@@ -1,15 +1,23 @@
 package UI_tests;
 
 import UI_pages.SE_DataFilterPage;
+import UI_pages.SE_FileDownloadPage;
 import UI_pages.SE_JQueryBoxListPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utilities.Driver;
+import utilities.ReadTxt;
+
+import java.io.FileInputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 
 public class SEasyUS_05 {
@@ -17,10 +25,13 @@ public class SEasyUS_05 {
     SE_JQueryBoxListPage jqueryBox;
     SE_DataFilterPage dataFilterPage;
 
+    SE_FileDownloadPage fileDownloadPage;
+
     {
 
         jqueryBox = new SE_JQueryBoxListPage();
         dataFilterPage = new SE_DataFilterPage();
+        fileDownloadPage = new SE_FileDownloadPage();
     }
 
 
@@ -70,16 +81,36 @@ public class SEasyUS_05 {
     }
 
     @Test
-    public void TC03() {
-        //"Kullanici, INTERMEDIATE ==> File Download linkine tiklar. 'Enter Data' textarea'ya
-        //""Selenium practice yapiyorum!"" seklinde yazdiginda textarea'nin hemen altindaki satirda
-        //472 karekter daha kaldigini dogrular.
-        //'Generate File' butonuna tikladiktan sonra cikan 'Download' linkine tiklar.
-        //""Selenium practice yapiyorum!"" cumlesinin download edildigini dogrular."
+    public void TC03() throws InterruptedException {
+
+
+         fileDownloadPage.fileDownloadLink.click();
+         String text = "Je fait de la pratique";
+         Thread.sleep(2000);
+         fileDownloadPage.dataTextBox.sendKeys(text);
+         Assert.assertTrue(fileDownloadPage.feedBack.getText().contains("478"));
+
+         fileDownloadPage.generateButton.click();
+         fileDownloadPage.downloadButton.click();
+         String fileName = fileDownloadPage.downloadButton.getAttribute("download");
+         String downloadPath = System.getProperty("user.home") + "\\Downloads\\" + "" + fileName;
+
+         boolean isFileExist = Files.exists(Paths.get(downloadPath));
+         Assert.assertTrue(isFileExist);
+
+         Assert.assertEquals(ReadTxt.readTxt(downloadPath).get(0),text);
+
+
+
 
 
 
 
 
     }
+    @AfterClass
+    public void tearDown() {
+        Driver.closeDriver();
+    }
 }
+
