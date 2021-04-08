@@ -2,19 +2,24 @@ package api_tests;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sun.tools.xjc.reader.xmlschema.bindinfo.BIConversion;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pojos.Infos;
 import pojos.Users;
 import utilities.JsonUtil;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class Pojo01 {
 
 
     String endPoint;
     Response response;
-    JsonPath json;
     ObjectMapper objectMapper;
 
     {
@@ -44,8 +49,43 @@ public class Pojo01 {
 
 
         }
-        System.out.println(" Pages "+allUsers.getMeta().getPagination().getPages());
+        System.out.println(" Pages " + allUsers.getMeta().getPagination().getPages());
+    }
+
+    @Test
+    public void pojo02() throws JsonProcessingException {
+
+        //all page assertion
+        response = JsonUtil.responseMethod(endPoint);
+        objectMapper = new ObjectMapper();
+        Users allUsers = objectMapper.readValue(response.asString(), Users.class);
+        System.out.println(allUsers.getMeta().getPagination().getPages());
+        //  response.prettyPrint();
+
+    }
+
+    @Test
+    public void TC02() throws JsonProcessingException {
+
+        //id natural order assertion
+
+        response = JsonUtil.responseMethod(endPoint);
+        objectMapper = new ObjectMapper();
+        Users allUsers = objectMapper.readValue(response.asString(), Users.class);
+        List<Integer> allId = new ArrayList<>();
+        for (Infos w : allUsers.getData()) {
+               allId.add(w.getId());
+        }
+        for (Integer w: allId) {
+            Assert.assertTrue(w-(w+1)!=1);
+        }
+    }
+
+    @Test
+    public void TC03() {
+         //id unique assertion
+
+        response = JsonUtil.responseMethod(endPoint);
     }
 }
-
 

@@ -161,5 +161,41 @@ public class ProductsQuery {
         Assert.assertTrue(mydata.get(0).get("count").equals("77"));
     }
 
+    @Test
+    public void name10() {
+        //Products tablosunda kac farkli ürün vardir.(77 üürn oldugunu dogrulayiniz)
+
+        String query = " select contact_title, region\n" +
+                " from suppliers\n" +
+                " where contact_title = 'Owner'";
+
+        List<Map<String, String>> mydata = DatabaseConnector.getQueryResultWithAListMap(query);
+        System.out.println(mydata.get(0).get("Owner"));
+        Assert.assertEquals(mydata.get(0).get("Owner"), null);
+
+    }
+
+    @Test
+    public void name11() {
+        // --employees tablosundan `Nancy' hangi firmalarin urunlerini satmis?
+        //  --( kullanilacak tablolar: orders,employees,order_dateils,products,suppliers)
+        // --Nancy nin toplam 29 farkli firmaya satis dogrulayiniz.
+
+        String query = " select  DISTINCT  s.company_name, e.first_name\n" +
+                " from employees e \n" +
+                " join orders o on o.employee_id = e.employee_id\n" +
+                " join order_details od on od.order_id = o.order_id\n" +
+                " join products p on p.product_id = od.product_id\n" +
+                " join suppliers s on s.supplier_id = p.supplier_id\n" +
+                " where e.first_name ='Nancy'";
+
+        List<Map<String, String>> mydata = DatabaseConnector.getQueryResultWithAListMap(query);
+        Assert.assertEquals(mydata.size(),29);
+
+    }
+
+
+
+
 
 }

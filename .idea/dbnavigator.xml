@@ -42,6 +42,7 @@ join employees on orders.employee_id = employees.employee_id
 group by employees.first_name, employees.last_name order by count(suppliers.company_name) desc;
 
 
+
 create view Empl_satisMiktari
 as
 select count(suppliers.company_name) as satis_sayisi,
@@ -253,9 +254,60 @@ select products.category_id , count (product_name)
 from products
 group by products.category_id
 
+--products tablosunda hic satis yapmadigimiz ürünlerin sayisi 0 dir
 select p.product_id, product_name, od.order_id
 from products p
- left join order_details od on od.product_id = p.product_id]]></console>
+ left join order_details od on od.product_id = p.product_id
+ 
+ 
+ --sisteme kayit olmus ama siparis vermemis müsteriler 2 kisidir.
+ 
+ select c.customer_id , o.order_id
+ from customers c 
+ join orders o on c.customer_id = o.customer_id
+
+ --products tablosunda hic satis yapmadigimiz ürünlerin sayisi 0 dir
+ 
+ 
+ ----contact title i owner olan kisilerin region degerlerinin null oldugunu dogrulayiniz.                                                                  
+   --Suppliers tablosu kullanılacak.
+   
+ select contact_title, region
+ from suppliers
+ where contact_title = 'Owner'
+ 
+ 
+ --orders tablosundan son siparis tarihinden bugüne kadar gecen süreyi veren sorguyu yaziniz.
+ select order_date
+ from orders
+ 
+ --employees tablosundan `Nancy' hangi firmalarin urunlerini satmis?
+  --( kullanilacak tablolar: orders,employees,order_dateils,products,suppliers) 
+ --Nancy nin toplam 29 farkli firmaya satis dogrulayiniz.
+ 
+ 
+ select  DISTINCT  s.company_name, e.first_name
+ from employees e 
+ join orders o on o.employee_id = e.employee_id
+ join order_details od on od.order_id = o.order_id
+ join products p on p.product_id = od.product_id
+ join suppliers s on s.supplier_id = p.supplier_id
+ where e.first_name ='Nancy'
+ 
+ 
+ --her bir employeenin kac  firmaya satis yaptigini bulunuz?
+ --(kullanilacak tablolar: employees, orders, order_details,products,suppliers)
+ --ortalamanin altinda satis yapan employee sayisi 4 tür.
+ --(ortamala hesaplarima göre 239,4 cikti)(bu soruyu cözerken subquery kullanmak isteyebilirsiniz)
+ 
+ 
+ select  e.first_name, count(s.company_name)
+ from employees e
+ join orders o on o.employee_id = e.employee_id
+ join order_details od on od.order_id = o.order_id
+ join products p on p.product_id = od.product_id
+ join suppliers s on s.supplier_id = p.supplier_id
+ group by e.first_name order by count(s.company_name) desc;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
