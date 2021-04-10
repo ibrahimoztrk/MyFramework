@@ -1,302 +1,163 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/SEasyUS_06.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/Hyrai02.feature");
 formatter.feature({
-  "name": "User is on the Webtables",
+  "name": "Account profile page",
   "description": "",
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@seleniumeasy06"
+      "name": "@allModuleSettings"
     }
   ]
 });
 formatter.scenario({
-  "name": "user is on the home page",
+  "name": ": user goes hyrai homepage",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@seleniumeasy06"
-    },
-    {
-      "name": "@TC001"
+      "name": "@allModuleSettings"
     }
   ]
 });
 formatter.step({
-  "name": "The user is on the page of \"https://www.seleniumeasy.com/test/\"",
+  "name": "user goes to hyrai homepage \"https://hyrai.com/\"",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "UI_tests.SEasyUS_01.the_user_is_on_the_page_of(java.lang.String)"
+  "location": "UI_tests.HyriaResumeStepDef.user_goes_to_hyrai_homepage(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "The user clicks on the Start Practicing",
+  "name": "user goes to signIn page",
   "keyword": "And "
 });
 formatter.match({
-  "location": "UI_tests.SEasyUS_01.the_user_clicks_on_the_Start_Practicing()"
+  "location": "UI_tests.HyriaResumeStepDef.user_goes_to_signIn_page()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "The user clicks on the Table",
+  "name": "user logs in with the valid mail \"nexima00@gmail.com\"",
   "keyword": "And "
 });
 formatter.match({
-  "location": "UI_tests.SEasyUS_06.the_user_clicks_on_the_Table()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Kullanici Table Pagination sayfasindadir",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@seleniumeasy06"
-    },
-    {
-      "name": "@TC002"
-    }
-  ]
-});
-formatter.step({
-  "name": "The user clicks on Table Pagination",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "UI_tests.SEasyUS_06.the_user_clicks_on_Table_Pagination()"
+  "location": "UI_tests.HyriaResumeStepDef.user_logs_in_with_the_valid_mail(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Kullanici # satirinin \"1\" ile basladigini assert eder",
+  "name": "user logs in with the valid password \"123456\"",
   "keyword": "And "
 });
 formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullanici_satirinin_ile_basladigini_assert_eder(java.lang.String)"
+  "location": "UI_tests.HyriaResumeStepDef.user_logs_in_with_the_valid_password(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Kullanici ikinci. sayfa linkine tiklar",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullanici_ikinci_sayfa_linkine_tiklar()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Kullanici ikinci. sayfanin  # satirinin \"6\" ile basladigini assert eder",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullanici_ikinci_sayfanin_satirinin_ile_basladigini_assert_eder(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Kullanici ucuncu.sayfanin linkine tiklar",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullanici_ucuncu_sayfanin_linkine_tiklar()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Kullanici ucuncu sayfa  # satirinin \"11\" ile basladigini assert eder",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullanici_ucuncu_sayfa_satirinin_ile_basladigini_assert_eder(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Kullanici tekrar birinci sayfaya doner",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullaniciTekrarBirinciSayfayaDoner()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Kullanici ileri sayfa linkine tiklar",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullanici_ileri_sayfa_linkine_tiklar()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Kullanici # satirinin ilk hucresinin \"6\" ile basladigini assert eder",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullanici_satirinin_ilk_hucresinin_ile_basladigini_assert_eder(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Kullanici geri sayfa linkine tiklar",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullanici_geri_sayfa_linkine_tiklar()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Kullanici # satirinin birinci hucresinin \"1\" ile basladigini assert eder",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullanici_satirinin_birinci_hucresinin_ile_basladigini_assert_eder(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Kullanici toplam 91 cell oldugunu assert eder",
+  "name": "user click signIn button",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullanici_toplam_cell_oldugunu_assert_eder(java.lang.Integer)"
+  "location": "UI_tests.HyriaResumeStepDef.user_click_signIn_button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "Kullanici table data search sayfasindadir",
+  "name": "users should be able to view update and add information in the user edit settings other module",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@seleniumeasy06"
+      "name": "@allModuleSettings"
     },
     {
-      "name": "@TC003"
+      "name": "@settingsOther"
     }
   ]
 });
 formatter.step({
-  "name": "Kullanici table data search linkine tiklar",
+  "name": "user click settings",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullanici_table_data_search_linkine_tiklar()"
+  "location": "UI_tests.HyriaSettingsStepDef.user_click_settings()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Kullanici Tasks panelinin altinda sirasiyla Task, Assignee, Status basliklarinin oldugunu dogrular.",
+  "name": "user click other button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullanici_Tasks_panelinin_altinda_sirasiyla_Task_Assignee_Status_basliklarinin_oldugunu_dogrular()"
+  "location": "UI_tests.HyriaSettingsStepDef.user_click_other_button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Kullanici input\u0027ta Filter by Task,Assignee,Status textinin yer aldigini dogrular",
+  "name": "user change employment type",
   "keyword": "And "
 });
 formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullanici_input_ta_Filter_by_Task_Assignee_Status_textinin_yer_aldigini_dogrular()"
+  "location": "UI_tests.HyriaSettingsStepDef.user_change_employment_type()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Kullanici input\u0027a \"Mike\" yazar",
+  "name": "user change salary expectation",
   "keyword": "And "
 });
 formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullanici_input_a_yazar(java.lang.String)"
+  "location": "UI_tests.HyriaSettingsStepDef.user_change_salary_expectation()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Kullanici tabloda sadece bir satir oldugunu ve bu satirin \"Mike\" ismine ait oldugunu assert eder",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullanici_tabloda_sadece_bir_satir_oldugunu_ve_bu_satirin_ismine_ait_oldugunu_assert_eder(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Listed Users tablosunda filtreleme yapar",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@seleniumeasy06"
-    },
-    {
-      "name": "@TC004"
-    }
-  ]
-});
-formatter.step({
-  "name": "Kullanici Listed Users panelinin aldindaki 4 tane input\u0027un aktif olmadigini assert eder",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullanici_Listed_Users_panelinin_aldindaki_tane_input_un_aktif_olmadigini_assert_eder(java.lang.Integer)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Kullanici filtre butonuna basar",
+  "name": "user change technologies experience",
   "keyword": "And "
 });
 formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullanici_filtre_butonuna_basar()"
+  "location": "UI_tests.HyriaSettingsStepDef.user_change_technologies_experience()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Kullanici firstname inputune \"B\" harfi girer",
+  "name": "user change years of experience",
   "keyword": "And "
 });
 formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullanici_firstname_inputune_harfi_girer(java.lang.String)"
+  "location": "UI_tests.HyriaSettingsStepDef.user_change_years_of_experience()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Kullanici tablo\u0027da B harfi ile baslayan iki isime ait satirlari gorur",
-  "keyword": "Then "
+  "name": "user change years of remote experience",
+  "keyword": "And "
 });
 formatter.match({
-  "location": "UI_tests.SEasyUS_06.kullanici_tablo_da_B_harfi_ile_baslayan_iki_isime_ait_satirlari_gorur()"
+  "location": "UI_tests.HyriaSettingsStepDef.user_change_years_of_remote_experience()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user change type of engineering experience",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "UI_tests.HyriaSettingsStepDef.user_change_type_of_engineering_experience()"
 });
 formatter.result({
   "status": "passed"

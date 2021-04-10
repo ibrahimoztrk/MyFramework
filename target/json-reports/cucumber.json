@@ -3,444 +3,223 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2021-04-06T11:56:14.109Z",
-        "line": 6,
-        "name": "user is on the home page",
+        "start_timestamp": "2021-04-09T21:43:29.581Z",
+        "line": 4,
+        "name": ": user goes hyrai homepage",
         "description": "",
-        "id": "user-is-on-the-webtables;user-is-on-the-home-page",
+        "id": "account-profile-page;:-user-goes-hyrai-homepage",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 11692000000,
+              "duration": 8657000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user goes to hyrai homepage \"https://hyrai.com/\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"https://hyrai.com/\"",
+                  "offset": 28
+                }
+              ],
+              "location": "UI_tests.HyriaResumeStepDef.user_goes_to_hyrai_homepage(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1955000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user goes to signIn page",
+            "match": {
+              "location": "UI_tests.HyriaResumeStepDef.user_goes_to_signIn_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 481000000,
               "status": "passed"
             },
             "line": 7,
-            "name": "The user is on the page of \"https://www.seleniumeasy.com/test/\"",
+            "name": "user logs in with the valid mail \"nexima00@gmail.com\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"https://www.seleniumeasy.com/test/\"",
-                  "offset": 27
+                  "val": "\"nexima00@gmail.com\"",
+                  "offset": 33
                 }
               ],
-              "location": "UI_tests.SEasyUS_01.the_user_is_on_the_page_of(java.lang.String)"
+              "location": "UI_tests.HyriaResumeStepDef.user_logs_in_with_the_valid_mail(java.lang.String)"
             },
-            "keyword": "Given "
+            "keyword": "And "
           },
           {
             "result": {
-              "duration": 110000000,
+              "duration": 252000000,
               "status": "passed"
             },
             "line": 8,
-            "name": "The user clicks on the Start Practicing",
-            "match": {
-              "location": "UI_tests.SEasyUS_01.the_user_clicks_on_the_Start_Practicing()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1214000000,
-              "status": "passed"
-            },
-            "line": 9,
-            "name": "The user clicks on the Table",
-            "match": {
-              "location": "UI_tests.SEasyUS_06.the_user_clicks_on_the_Table()"
-            },
-            "keyword": "And "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@seleniumeasy06"
-          },
-          {
-            "name": "@TC001"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2021-04-06T11:56:27.350Z",
-        "line": 13,
-        "name": "Kullanici Table Pagination sayfasindadir",
-        "description": "",
-        "id": "user-is-on-the-webtables;kullanici-table-pagination-sayfasindadir",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 524000000,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "The user clicks on Table Pagination",
-            "match": {
-              "location": "UI_tests.SEasyUS_06.the_user_clicks_on_Table_Pagination()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 52000000,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "Kullanici # satirinin \"1\" ile basladigini assert eder",
+            "name": "user logs in with the valid password \"123456\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"1\"",
-                  "offset": 22
-                }
-              ],
-              "location": "UI_tests.SEasyUS_06.kullanici_satirinin_ile_basladigini_assert_eder(java.lang.String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 125000000,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "Kullanici ikinci. sayfa linkine tiklar",
-            "match": {
-              "location": "UI_tests.SEasyUS_06.kullanici_ikinci_sayfa_linkine_tiklar()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 49000000,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "Kullanici ikinci. sayfanin  # satirinin \"6\" ile basladigini assert eder",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"6\"",
-                  "offset": 40
-                }
-              ],
-              "location": "UI_tests.SEasyUS_06.kullanici_ikinci_sayfanin_satirinin_ile_basladigini_assert_eder(java.lang.String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 119000000,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "Kullanici ucuncu.sayfanin linkine tiklar",
-            "match": {
-              "location": "UI_tests.SEasyUS_06.kullanici_ucuncu_sayfanin_linkine_tiklar()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 45000000,
-              "status": "passed"
-            },
-            "line": 19,
-            "name": "Kullanici ucuncu sayfa  # satirinin \"11\" ile basladigini assert eder",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"11\"",
-                  "offset": 36
-                }
-              ],
-              "location": "UI_tests.SEasyUS_06.kullanici_ucuncu_sayfa_satirinin_ile_basladigini_assert_eder(java.lang.String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 113000000,
-              "status": "passed"
-            },
-            "line": 20,
-            "name": "Kullanici tekrar birinci sayfaya doner",
-            "match": {
-              "location": "UI_tests.SEasyUS_06.kullaniciTekrarBirinciSayfayaDoner()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 103000000,
-              "status": "passed"
-            },
-            "line": 21,
-            "name": "Kullanici ileri sayfa linkine tiklar",
-            "match": {
-              "location": "UI_tests.SEasyUS_06.kullanici_ileri_sayfa_linkine_tiklar()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 40000000,
-              "status": "passed"
-            },
-            "line": 22,
-            "name": "Kullanici # satirinin ilk hucresinin \"6\" ile basladigini assert eder",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"6\"",
+                  "val": "\"123456\"",
                   "offset": 37
                 }
               ],
-              "location": "UI_tests.SEasyUS_06.kullanici_satirinin_ilk_hucresinin_ile_basladigini_assert_eder(java.lang.String)"
+              "location": "UI_tests.HyriaResumeStepDef.user_logs_in_with_the_valid_password(java.lang.String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 95000000,
+              "duration": 104000000,
               "status": "passed"
             },
-            "line": 23,
-            "name": "Kullanici geri sayfa linkine tiklar",
+            "line": 9,
+            "name": "user click signIn button",
             "match": {
-              "location": "UI_tests.SEasyUS_06.kullanici_geri_sayfa_linkine_tiklar()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 67000000,
-              "status": "passed"
-            },
-            "line": 24,
-            "name": "Kullanici # satirinin birinci hucresinin \"1\" ile basladigini assert eder",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"1\"",
-                  "offset": 41
-                }
-              ],
-              "location": "UI_tests.SEasyUS_06.kullanici_satirinin_birinci_hucresinin_ile_basladigini_assert_eder(java.lang.String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 35000000,
-              "status": "passed"
-            },
-            "line": 25,
-            "name": "Kullanici toplam 91 cell oldugunu assert eder",
-            "match": {
-              "arguments": [
-                {
-                  "val": "91",
-                  "offset": 17
-                }
-              ],
-              "location": "UI_tests.SEasyUS_06.kullanici_toplam_cell_oldugunu_assert_eder(java.lang.Integer)"
+              "location": "UI_tests.HyriaResumeStepDef.user_click_signIn_button()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "name": "@seleniumeasy06"
-          },
-          {
-            "name": "@TC002"
+            "name": "@allModuleSettings"
           }
         ]
       },
       {
-        "start_timestamp": "2021-04-06T11:56:28.730Z",
-        "line": 28,
-        "name": "Kullanici table data search sayfasindadir",
+        "start_timestamp": "2021-04-09T21:43:41.273Z",
+        "line": 13,
+        "name": "users should be able to view update and add information in the user edit settings other module",
         "description": "",
-        "id": "user-is-on-the-webtables;kullanici-table-data-search-sayfasindadir",
+        "id": "account-profile-page;users-should-be-able-to-view-update-and-add-information-in-the-user-edit-settings-other-module",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 403000000,
+              "duration": 1497000000,
               "status": "passed"
             },
-            "line": 29,
-            "name": "Kullanici table data search linkine tiklar",
+            "line": 14,
+            "name": "user click settings",
             "match": {
-              "location": "UI_tests.SEasyUS_06.kullanici_table_data_search_linkine_tiklar()"
+              "location": "UI_tests.HyriaSettingsStepDef.user_click_settings()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 2155000000,
+              "duration": 502000000,
               "status": "passed"
             },
-            "line": 30,
-            "name": "Kullanici Tasks panelinin altinda sirasiyla Task, Assignee, Status basliklarinin oldugunu dogrular.",
+            "line": 15,
+            "name": "user click other button",
             "match": {
-              "location": "UI_tests.SEasyUS_06.kullanici_Tasks_panelinin_altinda_sirasiyla_Task_Assignee_Status_basliklarinin_oldugunu_dogrular()"
+              "location": "UI_tests.HyriaSettingsStepDef.user_click_other_button()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 54000000,
+              "duration": 9628000000,
               "status": "passed"
             },
-            "line": 31,
-            "name": "Kullanici input\u0027ta Filter by Task,Assignee,Status textinin yer aldigini dogrular",
+            "line": 16,
+            "name": "user change employment type",
             "match": {
-              "location": "UI_tests.SEasyUS_06.kullanici_input_ta_Filter_by_Task_Assignee_Status_textinin_yer_aldigini_dogrular()"
+              "location": "UI_tests.HyriaSettingsStepDef.user_change_employment_type()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 123000000,
+              "duration": 6362000000,
               "status": "passed"
             },
-            "line": 32,
-            "name": "Kullanici input\u0027a \"Mike\" yazar",
+            "line": 17,
+            "name": "user change salary expectation",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"Mike\"",
-                  "offset": 18
-                }
-              ],
-              "location": "UI_tests.SEasyUS_06.kullanici_input_a_yazar(java.lang.String)"
+              "location": "UI_tests.HyriaSettingsStepDef.user_change_salary_expectation()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 71000000,
+              "duration": 4352000000,
               "status": "passed"
             },
-            "line": 33,
-            "name": "Kullanici tabloda sadece bir satir oldugunu ve bu satirin \"Mike\" ismine ait oldugunu assert eder",
+            "line": 18,
+            "name": "user change technologies experience",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"Mike\"",
-                  "offset": 58
-                }
-              ],
-              "location": "UI_tests.SEasyUS_06.kullanici_tabloda_sadece_bir_satir_oldugunu_ve_bu_satirin_ismine_ait_oldugunu_assert_eder(java.lang.String)"
+              "location": "UI_tests.HyriaSettingsStepDef.user_change_technologies_experience()"
             },
-            "keyword": "Then "
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4385000000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "user change years of experience",
+            "match": {
+              "location": "UI_tests.HyriaSettingsStepDef.user_change_years_of_experience()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6407000000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "user change years of remote experience",
+            "match": {
+              "location": "UI_tests.HyriaSettingsStepDef.user_change_years_of_remote_experience()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6550000000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "user change type of engineering experience",
+            "match": {
+              "location": "UI_tests.HyriaSettingsStepDef.user_change_type_of_engineering_experience()"
+            },
+            "keyword": "And "
           }
         ],
         "tags": [
           {
-            "name": "@seleniumeasy06"
+            "name": "@allModuleSettings"
           },
           {
-            "name": "@TC003"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2021-04-06T11:56:31.550Z",
-        "line": 36,
-        "name": "Listed Users tablosunda filtreleme yapar",
-        "description": "",
-        "id": "user-is-on-the-webtables;listed-users-tablosunda-filtreleme-yapar",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 197000000,
-              "status": "passed"
-            },
-            "line": 37,
-            "name": "Kullanici Listed Users panelinin aldindaki 4 tane input\u0027un aktif olmadigini assert eder",
-            "match": {
-              "arguments": [
-                {
-                  "val": "4",
-                  "offset": 43
-                }
-              ],
-              "location": "UI_tests.SEasyUS_06.kullanici_Listed_Users_panelinin_aldindaki_tane_input_un_aktif_olmadigini_assert_eder(java.lang.Integer)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 118000000,
-              "status": "passed"
-            },
-            "line": 38,
-            "name": "Kullanici filtre butonuna basar",
-            "match": {
-              "location": "UI_tests.SEasyUS_06.kullanici_filtre_butonuna_basar()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 119000000,
-              "status": "passed"
-            },
-            "line": 39,
-            "name": "Kullanici firstname inputune \"B\" harfi girer",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"B\"",
-                  "offset": 29
-                }
-              ],
-              "location": "UI_tests.SEasyUS_06.kullanici_firstname_inputune_harfi_girer(java.lang.String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 10040000000,
-              "status": "passed"
-            },
-            "line": 40,
-            "name": "Kullanici tablo\u0027da B harfi ile baslayan iki isime ait satirlari gorur",
-            "match": {
-              "location": "UI_tests.SEasyUS_06.kullanici_tablo_da_B_harfi_ile_baslayan_iki_isime_ait_satirlari_gorur()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@seleniumeasy06"
-          },
-          {
-            "name": "@TC004"
+            "name": "@settingsOther"
           }
         ]
       }
     ],
-    "name": "User is on the Webtables",
+    "name": "Account profile page",
     "description": "",
-    "id": "user-is-on-the-webtables",
+    "id": "account-profile-page",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/SEasyUS_06.feature",
+    "uri": "file:src/test/resources/features/Hyrai02.feature",
     "tags": [
       {
-        "name": "@seleniumeasy06",
+        "name": "@allModuleSettings",
         "type": "Tag",
         "location": {
           "line": 1,

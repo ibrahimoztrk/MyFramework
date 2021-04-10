@@ -12,8 +12,9 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "UI_tests",
-        tags = "@seleniumeasy06",
+        tags = "@allModuleSettings",
         dryRun = false
+
 
 )
 public class Runner {

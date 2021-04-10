@@ -24,7 +24,7 @@ public class JsonUtil {
     public static String convertJavaToJson(Object object) {
         String jsonResult = "";
         try {
-            jsonResult = mapper.writeValueAsString(object  );
+            jsonResult = mapper.writeValueAsString(object);
         } catch (JsonGenerationException e) {
             System.out.println("Java objectini Jsona cevirirken exception olustu." + e.getMessage());
         } catch (JsonMappingException e) {
@@ -50,15 +50,15 @@ public class JsonUtil {
 
     }
 
-     public static Response responseMethod(String url){
-         Response response = given().
-                 accept(ContentType.JSON).
-                 when().
-                 get(url);
-       //  response.prettyPrint();
+    public static Response responseMethod(String url) {
+        Response response = given().
+                accept(ContentType.JSON).
+                when().
+                get(url);
+        //  response.prettyPrint();
 
-         return response;
-     }
+        return response;
+    }
     // List data convert json to java
 
     // Customer[] allCustomer = mapper.readValue(json, Customer[].class);

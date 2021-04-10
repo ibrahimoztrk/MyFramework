@@ -3,6 +3,7 @@ package api_tests;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.tools.xjc.reader.xmlschema.bindinfo.BIConversion;
+import io.cucumber.java.sl.In;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.Assert;
@@ -60,7 +61,7 @@ public class Pojo01 {
         objectMapper = new ObjectMapper();
         Users allUsers = objectMapper.readValue(response.asString(), Users.class);
         System.out.println(allUsers.getMeta().getPagination().getPages());
-        //  response.prettyPrint();
+        response.prettyPrint();
 
     }
 
@@ -74,18 +75,74 @@ public class Pojo01 {
         Users allUsers = objectMapper.readValue(response.asString(), Users.class);
         List<Integer> allId = new ArrayList<>();
         for (Infos w : allUsers.getData()) {
-               allId.add(w.getId());
+            allId.add(w.getId());
         }
-        for (Integer w: allId) {
-            Assert.assertTrue(w-(w+1)!=1);
+        for (Integer w : allId) {
+            Assert.assertTrue(w - (w + 1) != 1);
         }
     }
 
     @Test
-    public void TC03() {
-         //id unique assertion
+    public void TC03() throws JsonProcessingException {
+        //names are not NULL assertion
 
         response = JsonUtil.responseMethod(endPoint);
+        objectMapper = new ObjectMapper();
+        Users user = objectMapper.readValue(response.asString(), Users.class);
+
+        for (Infos w : user.getData()) {
+            for (Infos s : user.getData()) {
+                Assert.assertTrue(!w.getName().equals(null));
+            }
+
+
+        }
+
+    }
+
+    @Test
+    public void TC04() throws JsonProcessingException {
+        // check dublicate names
+        response = JsonUtil.responseMethod(endPoint);
+        Users allUser = objectMapper.readValue(response.asString(), Users.class);
+
+
+    }
+
+    @Test
+    public void TC05() throws JsonProcessingException {
+        //more females assertion
+        response = JsonUtil.responseMethod(endPoint);
+        Users allUser = objectMapper.readValue(response.asString(), Users.class);
+
+        int countOfFemale = 0;
+        int countOfMale = 0;
+
+        for (Infos w : allUser.getData()) {
+            if (w.getGender().equals("Female")) {
+                countOfFemale++;
+            } else {
+                countOfMale++;
+            }
+        }
+        Assert.assertTrue(countOfMale<countOfFemale);
+    }
+
+    @Test
+    public void TC06() throws JsonProcessingException {
+        //active status count assertion
+
+        response = JsonUtil.responseMethod(endPoint);
+        Users allusers = objectMapper.readValue(response.asString(), Users.class);
+         int numberOfActives=0;
+        for (Infos w : allusers.getData()) {
+              if(w.getStatus().equals("Active")) {
+                  numberOfActives++;
+              }
+        }
+        Assert.assertTrue(numberOfActives==13);
     }
 }
+
+
 

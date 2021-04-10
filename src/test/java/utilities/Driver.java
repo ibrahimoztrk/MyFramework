@@ -1,32 +1,38 @@
 package utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
-
-    //Driver class, driver instance'i baslatmak icin kullanilir.(Sinngleton Driver)
-    //Ihtiyacimiz oldugunda driver'i kurmak ve baslatmak icin kullaniriz.
-    //Driver null oldugunda create edip baslatacagiz.(if driver==null)
-    //Driver classi farkli browserlar(tarayici) ile de kullanacagimiz sekilde olusturacagiz.
-
-    private Driver(){
-        //Baska obje olusturulmasini istemedigimiz icin create ediyoruz.
-    }
-
-    //driver instance olusturalim
+    // Eğer bir class'tan NESNE ÜRETİLMESİNİ İSTEMİYORSANIZ
+    // constructor'ı private yapabilirsiniz (Singleton Class)
+    private Driver(){ }
+    // WebDriver nesnemizi, static olarak oluşturduk, çünkü program başlar başlamaz
+    // hafızada yer almasını istiyoruz.
     static WebDriver driver;
-    //driver'i baslatmak icin statik bir metod olusturalim
+    // Programın herhangi bir yerinden getDriver() methodu çağırılarak
+    // hafıza STATIC olarak oluşturulmuş DRIVER nesnesine erişebiliriz.
+    // Yani yeniden WebDriver nesnesi oluşturmak zorunda değiliz.
+    //Driver.getDriver()
     public static WebDriver getDriver(){
-        if(driver==null){
+        // Eğer driver nesnesi hafızada boşsa, oluşturulmamışsa yeniden oluşturmana gerek yok.
+        // Eğer null ise, yeniden oluşturabilirsin.
+        // Sadece ilk çağırıldığında bir tane nesne üret, sonraki çağırmalarda var olan nesnesi kullan.
+
+
+        if(driver == null){
             switch (ConfigurationReader.getProperty("browser")){
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
@@ -49,17 +55,101 @@ public class Driver {
                     driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
                     break;
             }
-
         }
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         return driver;
     }
-
     public static void closeDriver(){
-        if(driver!=null){  //eger driver chrome'u isaret ediyorsa
-      //      driver.quit();  // driver'i kapat
-            driver=null; // driver'in null oldugundan emin olmak icin tekrar null olarak atayalim.
-        }               //Boylelikle driver'i tekrar baslatabilirim.
-    }                   //Multi Browser Test(chrome, firefox, ie ...) yaparken bu onemli olacaktir.
+        // Eğer driver nesnesi NULL değilse, yani hafızada varsa
+        if (driver != null){
+            driver.quit();  // driver'ı kapat
+            driver = null;  // driver'ı hafızadan temizle.
+        }
+    }
+    public static void wait(int secs) {
+        try {
+            Thread.sleep(1000 * secs);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void clickWithJS(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
+    }
+    /**
+     * Scrolls down to an element using JavaScript
+     *
+     * @param element
+     */
+    public static void scrollToElement(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+    /**
+     * Performs double click action on an element
+     *
+     * @param element
+     */
+    public static void doubleClick(WebElement element) {
+        new Actions(Driver.getDriver()).doubleClick(element).build().perform();
+    }
+
+    public static void executeJScommand(WebElement element, String command) {
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+        jse.executeScript(command, element);
+    }
+    /**
+     * executes the given JavaScript command on given web element
+     *
+     * @param command
+     */
+    public static void executeJScommand(String command) {
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+        jse.executeScript(command);
+    }
+
+    public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeToWaitInSec);
+        return wait.until(ExpectedConditions.visibilityOf(element));
+    }
+    public static WebElement waitForVisibility(By locator, int timeout) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+    public static Boolean waitForInVisibility(By locator, int timeout) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
+        return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+    }
+    public static WebElement waitForClickablility(WebElement element, int timeout) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
+        return wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+    public static WebElement waitForClickablility(By locator, int timeout) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
+    public static void waitForPageToLoad(long timeOutInSeconds) {
+        ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver driver) {
+                return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
+            }
+        };
+        try {
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeOutInSeconds);
+            wait.until(expectation);
+        } catch (Exception error) {
+            error.printStackTrace();
+        }
+    }
+    //hyrai projesi icin olsuturulmus bir method
+    public static void cleanTextInBox(WebElement element) {
+        String inputText = element.getAttribute("value");
+        if( inputText != null ) {
+            for(int i=0; i<inputText.length();i++) {
+                element.sendKeys(Keys.BACK_SPACE);
+            }
+        }
+    }              //Multi Browser Test(chrome, firefox, ie ...) yaparken bu onemli olacaktir.
 }
