@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class HyriaResumePage {
+public class US_14_AccountProfilePage {
 
-    public HyriaResumePage() {
+    public US_14_AccountProfilePage() {
 
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -27,10 +27,12 @@ public class HyriaResumePage {
     public WebElement signInButton2;
     @FindBy(xpath = "//button[@class='button__Button-sc-1m6iuh2-0 gQCVJU sign-in_button__x3hrZ']")
     public WebElement signInButton2_1;
+    @FindBy(xpath = "class=\"ant-message-custom-content ant-message-success\"")
+    public WebElement successMessageResume;
     //================================================//
     // CANDIDATE ACCOUNT MENUSU
     //profile
-    @FindBy(xpath = "(//*[@class='text__StyledText-sc-1s1i12s-0 eJXBTy'])[1]")
+    @FindBy(xpath = "//button[@class='button__StyledButton-sc-914rhs-0 jcIapi']")
     public WebElement accountMenu;
     @FindBy(xpath ="//span[contains(text(),'Profile')]")
     public WebElement profileMenu;
@@ -151,28 +153,38 @@ public class HyriaResumePage {
     public WebElement changeCompanySize;
     @FindBy(xpath ="(//span[contains(text(),'Change')])[16]")
     public WebElement changeEmploymentType;
+    @FindBy(xpath = "(//button[@class='button__StyledButton-sc-914rhs-0 dOCYDw'])[6]")
+    public WebElement changeEmploymentType2;
+    @FindBy(id="react-select-6-input")
+    public WebElement employmentTypeInput;
     @FindBy(xpath ="(//button[@class='button__StyledButton-sc-914rhs-0 cPdvYS'])[6]")
     public WebElement changeEmploymentTypeSave;
     @FindBy(xpath = "(//button[@class='button__StyledButton-sc-914rhs-0 cPdvYS'])[7]")
     public WebElement changeSalaryTypeSave;
-    @FindBy(xpath = "(//div[@class=' css-1wa3eu0-placeholder'])[5]")
-    public WebElement employmentTypeChoose;
-    @FindBy(xpath ="(//span[contains(text(),'Change')])[18]")
+    @FindBy(xpath = "//input[@name='salary']")
+    public WebElement salaryInput;
+    @FindBy(xpath ="(//button[@class='button__StyledButton-sc-914rhs-0 dOCYDw'])[7]")
     public WebElement changeSalaryExpectation;
-    @FindBy(xpath ="(//span[contains(text(),'Change')])[21]")
+    @FindBy(xpath ="(//button[@class='button__StyledButton-sc-914rhs-0 dOCYDw'])[8]")
     public WebElement changeSkillSet;
-    @FindBy(xpath ="(//span[contains(text(),'Change')])[23]")
+    @FindBy(xpath = "(//div[@class=' css-tlfecz-indicatorContainer'])[7]")
+    public WebElement skillSetInutClear;
+    @FindBy(xpath ="(//button[@class='button__StyledButton-sc-914rhs-0 dOCYDw'])[9]")
     public WebElement changeYearsOfExperience;
-    @FindBy(xpath ="(//span[contains(text(),'Change')])[25]")
+
+    @FindBy(xpath ="(//button[@class='button__StyledButton-sc-914rhs-0 dOCYDw'])[10]")
     public WebElement changeYearsOfRemoteExperience;
-    @FindBy(xpath ="(//span[contains(text(),'Change')])[27]")
-    public WebElement changeTypeOfEngineeringExperience;
+    @FindBy(xpath = "//input[@name='remoteExperience']")
+    public WebElement remooteExperienceInput;
+    @FindBy(id ="react-select-7-input")
+    public WebElement skillSetInput;
     @FindBy(xpath = "(//button[@class='button__StyledButton-sc-914rhs-0 cPdvYS'])[8]")
     public WebElement changeSkillSetSave;
     @FindBy(xpath = "(//button[@class='button__StyledButton-sc-914rhs-0 cPdvYS'])[9]")
     public WebElement changeYearsOfExperienceSave;
     @FindBy(xpath = "//input[@name='totalExperience']")
     public WebElement yearsOfExperienceInput;
+
     @FindBy(xpath = "(//button[@class='button__StyledButton-sc-914rhs-0 cPdvYS'])[10]")
     public WebElement changeYearsOfRemoteExperienceSave;
     @FindBy(xpath = "(//button[@class='button__StyledButton-sc-914rhs-0 cPdvYS'])[11]")
@@ -183,6 +195,9 @@ public class HyriaResumePage {
     public WebElement changeTypeOfEngineeringExperience2;
     @FindBy(xpath = "(//button[@type='button'])[5]")
     public WebElement resumeDeleteOK;
+    @FindBy(xpath = "//div[@class='ant-message-custom-content ant-message-success']")
+    public WebElement successMessage;
+
     // Settings Other Finish
 //Resume bolumu
     @FindBy(xpath ="(//*[@class='text__StyledText-sc-1s1i12s-0 eBQuok'])[1]")
@@ -203,4 +218,52 @@ public class HyriaResumePage {
     public WebElement resumeDelete;
     @FindBy(xpath ="//span[@class='ant-popover-disabled-compatible-wrapper']")
     public WebElement resumeDelete2;
+    @FindBy(xpath = "//button[@class='button__Button-sc-1m6iuh2-0 dqQjhN']")
+    public WebElement newRoleButton;
+    @FindBy(xpath = "//input[@name='roleName']")
+    public WebElement rolNameInput;
+    @FindBy(xpath = "//input[@name='typesOfEngineering']")
+    public WebElement typeOfEngineer;
+    @FindBy(id = "react-select-2-input")
+    public WebElement engineerSkillsInput;
+    @FindBy(id = "tiny-react_26016574921618085710490_ifr")
+    public WebElement iframe1;
+    @FindBy(id = "tinymce")
+    public WebElement iframeBody;
+
+
+    @FindBy(xpath = "//input[@name='salary.min']")
+    public WebElement salaryMin;
+    @FindBy(xpath = "//input[@name='salary.max']")
+    public WebElement salaryMax;
+    @FindBy(xpath = "//input[@role='spinbutton']")
+    public WebElement hyraiTargetInput;
+    @FindBy(xpath = "//input[@role='spinbutton']")
+    public WebElement jobUrlInput;
+    @FindBy(id="react-select-4-input")
+    public WebElement interviewLocationInput;
+    @FindBy(id="react-select-5-input")
+    public WebElement hiringLocationInput;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement publishNewRole;
+    @FindBy(id= "react-select-5-input")
+    public WebElement companySizeInput;
+    @FindBy(xpath = "(//button[@class='button__StyledButton-sc-914rhs-0 cPdvYS'])[5]")
+    public WebElement companySizeSave;
+    @FindBy(xpath = "(//button[@class='button__StyledButton-sc-914rhs-0 dOCYDw'])[5]")
+    public WebElement companySizeChange;
+
+
+
+
+
+
+
+
+
+
+
+    //input[@name='salary.min'] (edited)
+//input[@name='salary.max']
+
 }

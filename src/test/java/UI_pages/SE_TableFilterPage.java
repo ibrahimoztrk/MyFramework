@@ -41,6 +41,12 @@ public class SE_TableFilterPage {
     public List<WebElement> numberOfRow;
     @FindBy(xpath = "//tbody//tr//td[6]")
     public List<WebElement> salary;
+    @FindBy(xpath = "//tbody//tr//td[3]")
+    public List<WebElement> office2012;
+    @FindBy(xpath = "//tbody//tr//td[6]")
+    public List<WebElement> date2012;
+
+
 
     public void selectLenght(WebElement element ) {
         Select select = new Select(element);

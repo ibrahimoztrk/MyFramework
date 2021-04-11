@@ -1,14 +1,15 @@
 package UI_tests;
 
-import UI_pages.HyriaResumePage;
+import UI_pages.US_14_AccountProfilePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import utilities.Driver;
 
 public class HyriaResumeStepDef {
-    HyriaResumePage homePage = new HyriaResumePage();
+    US_14_AccountProfilePage homePage = new US_14_AccountProfilePage();
     Actions actions = new Actions(Driver.getDriver());
 
     @Given("user goes to hyrai homepage {string}")
@@ -18,6 +19,7 @@ public class HyriaResumeStepDef {
 
     @Given("user goes to signIn page")
     public void user_goes_to_signIn_page() {
+        Driver.waitForClickablility(homePage.login, 10);
         homePage.login.click();
         homePage.signInButton.click();
     }
@@ -54,7 +56,7 @@ public class HyriaResumeStepDef {
 
         Driver.wait(3);
 
- //       Driver.getDriver().switchTo().activeElement().sendKeys(filePath);
+        //       Driver.getDriver().switchTo().activeElement().sendKeys(filePath);
         homePage.resumeSelect3.sendKeys(filePath);
         Driver.wait(2);
 
@@ -63,8 +65,14 @@ public class HyriaResumeStepDef {
 
     @Then("user click upload resume")
     public void user_click_upload_resume() throws InterruptedException {
-        Driver.wait(5);
+        Driver.wait(2);
         Driver.clickWithJS(homePage.resumeUpload);
+
+
+
+
+
+
 
     }
 
@@ -72,7 +80,10 @@ public class HyriaResumeStepDef {
     public void user_delete_resume() {
         Driver.wait(2);
         Driver.clickWithJS(homePage.resumeDelete);
-       Driver.clickWithJS(homePage.resumeDeleteOK);
+        Driver.clickWithJS(homePage.resumeDeleteOK);
+        Driver.wait(2);
+        Assert.assertTrue(homePage.successMessage.isDisplayed());
+
     }
 
 }
