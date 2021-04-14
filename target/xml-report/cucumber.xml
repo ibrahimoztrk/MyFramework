@@ -1,52 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="53.84">
-<testcase classname="Account profile page" name=": user goes hyrai homepage" time="8.44">
-<system-out><![CDATA[Given user goes to hyrai homepage "https://hyrai.com/"......................passed
-And user goes to signIn page................................................passed
-And user logs in with the valid mail "nexima00@gmail.com"...................passed
-And user logs in with the valid password "123456"...........................passed
-Then user click signIn button...............................................passed
-]]></system-out>
+<testsuite errors="0" failures="7" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="7" time="1.468">
+<testcase classname="Gmi Bank All Customer Info" name="All customer data" time="0.19">
+<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given kullaniciii tum musteri bilgilerini okur sayfasina giderek "https://www.gmibank.com/api/tp-account-registrations".undefined
+And kullaniciii "291-34-8312"  kayitli musteriyi bulur......................undefined
+Then kullaniciii adrese gider "https://www.gmibank.com/api/tp-account-registrations" ssn "ssn" numarasi  "291-34-8312" ile  assert yapar.undefined
+]]></failure>
 </testcase>
-<testcase classname="Account profile page" name="users should be able to view update and add information in the user edit settings other module" time="44.493">
-<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class='ant-message-custom-content ant-message-success']&quot;}&#10;  (Session info: chrome=89.0.4389.114)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-JUNIQM5', ip: '192.168.0.10', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\ibrahim\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:60708}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 5aca2f128fe9fbccd55a023382401231&#10;*** Element info: {Using=xpath, value=//div[@class='ant-message-custom-content ant-message-success']}" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given user click settings...................................................passed
-And user click other button.................................................passed
-And user change employment type.............................................passed
-And user change salary expectation..........................................passed
-And user change technologies experience.....................................passed
-And user change years of experience.........................................failed
-And user change years of remote experience..................................skipped
-And user change type of engineering experience..............................skipped
-
-StackTrace:
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='ant-message-custom-content ant-message-success']"}
-  (Session info: chrome=89.0.4389.114)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-JUNIQM5', ip: '192.168.0.10', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\Users\ibrahim\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:60708}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 5aca2f128fe9fbccd55a023382401231
-*** Element info: {Using=xpath, value=//div[@class='ant-message-custom-content ant-message-success']}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy18.isDisplayed(Unknown Source)
-	at UI_tests.HyriaSettingsStepDef.user_change_years_of_experience(HyriaSettingsStepDef.java:84)
-	at ✽.user change years of experience(file:///C:/Users/ibrahim/IdeaProjects/MyFramework01/src/test/resources/features/Hyrai02.feature:19)
+<testcase classname="Gmi Bank All Customer Info" name="Country" time="0.011">
+<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given kullaniciii tum countr bilgilerini okur sayfasina giderek "https://www.gmibank.com/api/tp-countries".undefined
+Then kullaniciii country assert "Japan" eder................................undefined
+]]></failure>
+</testcase>
+<testcase classname="Gmi Bank All Customer Info" name="State" time="0.006">
+<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given kullaniciii tum state bilgilerini okur sayfasina giderek "https://www.gmibank.com/api/tp-states".undefined
+Then kullaniciii state "ohio" aseert eder...................................undefined
+]]></failure>
+</testcase>
+<testcase classname="Gmi Bank All Customer Info" name="US24_post" time="0.003">
+<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given kullaniciii state bilgilerini okur sayfasina giderek "https://www.gmibank.com/api/tp-states".undefined
+And kullaniciii yeni  bir  state olusturur "Baye" ve assert eder............undefined
+]]></failure>
+</testcase>
+<testcase classname="Gmi Bank All Customer Info" name="delete state" time="0.003">
+<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given kullaniciii tum state bilgilerini okur sayfasina giderek "https://www.gmibank.com/api/tp-states".undefined
+]]></failure>
+</testcase>
+<testcase classname="Gmi Bank All Customer Info" name="country guncelleme" time="0.003">
+<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given kullaniciii tum countr bilgilerini okur sayfasina giderek "https://www.gmibank.com/api/tp-countries".undefined
+And kullaniciii country gunceller ve assert eder............................undefined
+]]></failure>
+</testcase>
+<testcase classname="Gmi Bank All Customer Info" name="US25_post_country" time="0.018">
+<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given kullaniciii tum countr bilgilerini okur sayfasina giderek "https://www.gmibank.com/api/tp-countries".undefined
+And kullaniciii yeni  bir  country olusturur "Yeni Bayram" ve assert eder...undefined
 ]]></failure>
 </testcase>
 </testsuite>

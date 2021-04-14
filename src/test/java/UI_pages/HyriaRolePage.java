@@ -75,6 +75,55 @@ public class HyriaRolePage {
     public WebElement primaryContactInput;
 
 
+    @FindBy(xpath = "(//button[@class='ant-btn ant-btn-block'])[2]")
+    public WebElement meetingEkrem;
+
+    @FindBy(partialLinkText = "Go")
+    public WebElement gotoMeetingLink;
+
+
+
+
+    @FindBy(linkText = "Delete meeting")
+  public WebElement deleteMeeingButton;
+
+
+    @FindBy(xpath = "//span[@title='Apr']")
+    public WebElement calenderApril;
+
+    @FindBy(xpath = "(//input[@class='ant-select-selection-search-input'])[2]")
+    public WebElement calenderMay;
+
+    @FindBy(xpath = "//button[@class='ant-btn ant-btn-sm']")
+    public WebElement meetingcancelButton;
+    @FindBy(xpath = "//input[@class='ant-select-selection-search-input']")
+    public WebElement yearInput;
+
+    @FindBy(xpath = "//span[@class='ant-select-selection-item']")
+    public WebElement year2019;
+
+
+    @FindBy(xpath = "(//button[@class='button__Button-sc-1m6iuh2-0 jpVLNb'])[4]")
+    public WebElement meetingButton;
+
+    @FindBy(xpath = "//span[@class='ant-select-selection-search']")
+    public WebElement meetingSearchYear;
+
+    @FindBy(xpath = "(//span[@class='ant-select-selection-search'])[2]")
+    public WebElement meetingSearchMonth;
+
+    @FindBy(xpath = "//button[@class='ant-btn ant-btn-primary ant-btn-sm']")
+    public WebElement deleteOK;
+
+
+
+
+
+
+
+
+
+
 
 
 

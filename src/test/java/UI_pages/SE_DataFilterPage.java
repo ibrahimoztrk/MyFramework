@@ -23,4 +23,7 @@ public class SE_DataFilterPage {
     public WebElement searchBox;
     @FindBy(xpath = "//h4[contains(text(),'Name: Brian Hoyies')]")
     public WebElement filteredName;
+    @FindBy(xpath = "//input[@type='search']")
+    public WebElement serchbox;
+
 }

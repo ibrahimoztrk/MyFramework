@@ -12,7 +12,13 @@ import pojos.Infos;
 import pojos.Users;
 import utilities.JsonUtil;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -106,7 +112,22 @@ public class Pojo01 {
         response = JsonUtil.responseMethod(endPoint);
         Users allUser = objectMapper.readValue(response.asString(), Users.class);
 
+        List<String> allName = new ArrayList<>();
+        for (Infos w : allUser.getData()) {
+            allName.add(w.getName());
+        }
 
+        int numberOfDublicate = 0;
+        for (int i = 0; i < allName.size() - 1; i++) {
+            for (int j = i + 1; j < allName.size(); j++) {
+                if (allName.get(i).equals(allName.get(j))) {
+                    System.out.println(allName.get(i));
+                    numberOfDublicate++;
+                }
+            }
+
+        }
+        Assert.assertTrue(numberOfDublicate == 0);
     }
 
     @Test
@@ -125,7 +146,7 @@ public class Pojo01 {
                 countOfMale++;
             }
         }
-        Assert.assertTrue(countOfMale<countOfFemale);
+        Assert.assertTrue(countOfMale < countOfFemale);
     }
 
     @Test
@@ -134,13 +155,122 @@ public class Pojo01 {
 
         response = JsonUtil.responseMethod(endPoint);
         Users allusers = objectMapper.readValue(response.asString(), Users.class);
-         int numberOfActives=0;
+        int numberOfActives = 0;
         for (Infos w : allusers.getData()) {
-              if(w.getStatus().equals("Active")) {
-                  numberOfActives++;
-              }
+            if (w.getStatus().equals("Active")) {
+                System.out.println(w.getName());
+                numberOfActives++;
+            }
         }
-        Assert.assertTrue(numberOfActives==13);
+        System.out.println(numberOfActives);
+        Assert.assertTrue(numberOfActives == 7);
+    }
+
+    @Test
+    public void TC07() throws JsonProcessingException {
+
+        response = JsonUtil.responseMethod(endPoint);
+        Users allusers = objectMapper.readValue(response.asString(), Users.class);
+        List<Integer> allId = new ArrayList<>();
+        for (Infos w : allusers.getData()) {
+            allId.add(w.getId());
+        }
+        Assert.assertTrue(allId.contains(41));
+
+    }
+
+    @Test
+    public void TC08() throws JsonProcessingException {
+        response = JsonUtil.responseMethod(endPoint);
+        Users allusers = objectMapper.readValue(response.asString(), Users.class);
+
+
+        for (Infos w : allusers.getData()) {
+
+            //     if(w.getName().equals(null) || w.getId().equals(null) || w.getGender().equals(null) ||  )
+        }
+
+    }
+
+    @Test
+    public void TC09() throws JsonProcessingException {
+        response = JsonUtil.responseMethod(endPoint);
+        Users allusers = objectMapper.readValue(response.asString(), Users.class);
+
+        List<String> allName = new ArrayList<>();
+        for (Infos w : allusers.getData()) {
+            allName.add(w.getName());
+        }
+        for (String w : allName) {
+            Assert.assertFalse(w.contains("Nuri"));
+        }
+
+
+    }
+
+    @Test
+    public void TC010() throws JsonProcessingException {
+        response = JsonUtil.responseMethod(endPoint);
+        Users allusers = objectMapper.readValue(response.asString(), Users.class);
+        List<String> allMail = new ArrayList<>();
+        for (Infos w : allusers.getData()) {
+            allMail.add(w.getEmail());
+        }
+        int numberOfGmail = 0;
+        for (String w : allMail) {
+            Assert.assertFalse(w.contains("aliveli@gmail.com"));
+            if (w.contains("@gmail")) {
+                numberOfGmail++;
+            }
+        }
+        Assert.assertTrue(numberOfGmail == 0);
+    }
+
+    @Test
+    public void TC011() throws JsonProcessingException {
+        response = JsonUtil.responseMethod(endPoint);
+        Users allusers = objectMapper.readValue(response.asString(), Users.class);
+
+        List<String> allName = new ArrayList<>();
+        for (Infos w : allusers.getData()) {
+            allName.add(w.getName());
+        }
+        int numberOfNamesAD = 0;
+        for (String w : allName) {
+            if (w.startsWith("A") || w.startsWith("D")) {
+                numberOfNamesAD++;
+            }
+        }
+        Assert.assertTrue(numberOfNamesAD == 5);
+
+    }
+
+    @Test
+    public void TC012() throws JsonProcessingException, ParseException {
+        response = JsonUtil.responseMethod(endPoint);
+        Users allUsers = objectMapper.readValue(response.asString(), Users.class);
+        SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
+        Date d1 = sdformat.parse("2019-04-15");
+        Date d2 = sdformat.parse("20120-01-01");
+
+        List<String> allCreateDate = new ArrayList<>();
+        for (Infos w : allUsers.getData()) {
+            allCreateDate.add(w.getCreatedAt());
+        }
+
+        List<String> allUpdateDate = new ArrayList<>();
+        for (Infos w : allUsers.getData()) {
+            allUpdateDate.add(w.getCreatedAt());
+        }
+        for (String w : allCreateDate) {
+            for (String z : allUpdateDate) {
+                if (w.compareTo(z)  <  0) {
+                    System.out.println("b   "+ w);
+                }
+            }
+
+        }
+
     }
 }
 

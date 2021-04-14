@@ -3,222 +3,273 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2021-04-11T13:16:12.521Z",
+        "start_timestamp": "2021-04-14T11:59:07.640Z",
         "line": 4,
-        "name": ": user goes hyrai homepage",
+        "name": "All customer data",
         "description": "",
-        "id": "account-profile-page;:-user-goes-hyrai-homepage",
+        "id": "gmi-bank-all-customer-info;all-customer-data",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 5738000000,
-              "status": "passed"
+              "status": "undefined"
             },
             "line": 5,
-            "name": "user goes to hyrai homepage \"https://hyrai.com/\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"https://hyrai.com/\"",
-                  "offset": 28
-                }
-              ],
-              "location": "UI_tests.HyriaResumeStepDef.user_goes_to_hyrai_homepage(java.lang.String)"
-            },
+            "name": "kullaniciii tum musteri bilgilerini okur sayfasina giderek \"https://www.gmibank.com/api/tp-account-registrations\"",
+            "match": {},
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1700000000,
-              "status": "passed"
+              "status": "undefined"
             },
             "line": 6,
-            "name": "user goes to signIn page",
-            "match": {
-              "location": "UI_tests.HyriaResumeStepDef.user_goes_to_signIn_page()"
-            },
+            "name": "kullaniciii \"291-34-8312\"  kayitli musteriyi bulur",
+            "match": {},
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 534000000,
-              "status": "passed"
+              "status": "undefined"
             },
             "line": 7,
-            "name": "user logs in with the valid mail \"nexima00@gmail.com\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"nexima00@gmail.com\"",
-                  "offset": 33
-                }
-              ],
-              "location": "UI_tests.HyriaResumeStepDef.user_logs_in_with_the_valid_mail(java.lang.String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 224000000,
-              "status": "passed"
-            },
-            "line": 8,
-            "name": "user logs in with the valid password \"123456\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"123456\"",
-                  "offset": 37
-                }
-              ],
-              "location": "UI_tests.HyriaResumeStepDef.user_logs_in_with_the_valid_password(java.lang.String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 106000000,
-              "status": "passed"
-            },
-            "line": 9,
-            "name": "user click signIn button",
-            "match": {
-              "location": "UI_tests.HyriaResumeStepDef.user_click_signIn_button()"
-            },
+            "name": "kullaniciii adrese gider \"https://www.gmibank.com/api/tp-account-registrations\" ssn \"ssn\" numarasi  \"291-34-8312\" ile  assert yapar",
+            "match": {},
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "name": "@allModuleSettings"
+            "name": "@butunmusteriler"
+          },
+          {
+            "name": "@apicustomer"
           }
         ]
       },
       {
-        "start_timestamp": "2021-04-11T13:16:20.991Z",
-        "line": 13,
-        "name": "users should be able to view update and add information in the user edit settings other module",
+        "start_timestamp": "2021-04-14T11:59:07.904Z",
+        "line": 9,
+        "name": "Country",
         "description": "",
-        "id": "account-profile-page;users-should-be-able-to-view-update-and-add-information-in-the-user-edit-settings-other-module",
+        "id": "gmi-bank-all-customer-info;country",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 1346000000,
-              "status": "passed"
+              "status": "undefined"
             },
-            "line": 14,
-            "name": "user click settings",
-            "match": {
-              "location": "UI_tests.HyriaSettingsStepDef.user_click_settings()"
-            },
+            "line": 10,
+            "name": "kullaniciii tum countr bilgilerini okur sayfasina giderek \"https://www.gmibank.com/api/tp-countries\"",
+            "match": {},
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1371000000,
-              "status": "passed"
+              "status": "undefined"
+            },
+            "line": 11,
+            "name": "kullaniciii country assert \"Japan\" eder",
+            "match": {},
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@butunmusteriler"
+          },
+          {
+            "name": "@apicountry"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-04-14T11:59:07.935Z",
+        "line": 13,
+        "name": "State",
+        "description": "",
+        "id": "gmi-bank-all-customer-info;state",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 14,
+            "name": "kullaniciii tum state bilgilerini okur sayfasina giderek \"https://www.gmibank.com/api/tp-states\"",
+            "match": {},
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "undefined"
             },
             "line": 15,
-            "name": "user click other button",
-            "match": {
-              "location": "UI_tests.HyriaSettingsStepDef.user_click_other_button()"
-            },
-            "keyword": "And "
+            "name": "kullaniciii state \"ohio\" aseert eder",
+            "match": {},
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@butunmusteriler"
           },
           {
-            "result": {
-              "duration": 7598000000,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "user change employment type",
-            "match": {
-              "location": "UI_tests.HyriaSettingsStepDef.user_change_employment_type()"
-            },
-            "keyword": "And "
-          },
+            "name": "@apistate"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-04-14T11:59:07.960Z",
+        "line": 17,
+        "name": "US24_post",
+        "description": "",
+        "id": "gmi-bank-all-customer-info;us24-post",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
           {
             "result": {
-              "duration": 6669000000,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "user change salary expectation",
-            "match": {
-              "location": "UI_tests.HyriaSettingsStepDef.user_change_salary_expectation()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 7880000000,
-              "status": "passed"
+              "status": "undefined"
             },
             "line": 18,
-            "name": "user change technologies experience",
-            "match": {
-              "location": "UI_tests.HyriaSettingsStepDef.user_change_technologies_experience()"
-            },
-            "keyword": "And "
+            "name": "kullaniciii state bilgilerini okur sayfasina giderek \"https://www.gmibank.com/api/tp-states\"",
+            "match": {},
+            "keyword": "Given "
           },
           {
             "result": {
-              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//div[@class\u003d\u0027ant-message-custom-content ant-message-success\u0027]\"}\n  (Session info: chrome\u003d89.0.4389.114)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DESKTOP-JUNIQM5\u0027, ip: \u0027192.168.0.10\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_241\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\\Users\\ibrahim\\AppData\\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:60708}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 5aca2f128fe9fbccd55a023382401231\n*** Element info: {Using\u003dxpath, value\u003d//div[@class\u003d\u0027ant-message-custom-content ant-message-success\u0027]}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy18.isDisplayed(Unknown Source)\r\n\tat UI_tests.HyriaSettingsStepDef.user_change_years_of_experience(HyriaSettingsStepDef.java:84)\r\n\tat ✽.user change years of experience(file:///C:/Users/ibrahim/IdeaProjects/MyFramework01/src/test/resources/features/Hyrai02.feature:19)\r\n",
-              "duration": 19625000000,
-              "status": "failed"
+              "status": "undefined"
             },
             "line": 19,
-            "name": "user change years of experience",
-            "match": {
-              "location": "UI_tests.HyriaSettingsStepDef.user_change_years_of_experience()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 20,
-            "name": "user change years of remote experience",
-            "match": {
-              "location": "UI_tests.HyriaSettingsStepDef.user_change_years_of_remote_experience()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 21,
-            "name": "user change type of engineering experience",
-            "match": {
-              "location": "UI_tests.HyriaSettingsStepDef.user_change_type_of_engineering_experience()"
-            },
+            "name": "kullaniciii yeni  bir  state olusturur \"Baye\" ve assert eder",
+            "match": {},
             "keyword": "And "
           }
         ],
         "tags": [
           {
-            "name": "@allModuleSettings"
+            "name": "@butunmusteriler"
           },
           {
-            "name": "@settingsOther"
+            "name": "@us24_post"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-04-14T11:59:07.979Z",
+        "line": 21,
+        "name": "delete state",
+        "description": "",
+        "id": "gmi-bank-all-customer-info;delete-state",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 22,
+            "name": "kullaniciii tum state bilgilerini okur sayfasina giderek \"https://www.gmibank.com/api/tp-states\"",
+            "match": {},
+            "keyword": "Given "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@butunmusteriler"
+          },
+          {
+            "name": "@us_27"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-04-14T11:59:07.998Z",
+        "line": 24,
+        "name": "country guncelleme",
+        "description": "",
+        "id": "gmi-bank-all-customer-info;country-guncelleme",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 25,
+            "name": "kullaniciii tum countr bilgilerini okur sayfasina giderek \"https://www.gmibank.com/api/tp-countries\"",
+            "match": {},
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 26,
+            "name": "kullaniciii country gunceller ve assert eder",
+            "match": {},
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@butunmusteriler"
+          },
+          {
+            "name": "@us_26"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-04-14T11:59:08.043Z",
+        "line": 28,
+        "name": "US25_post_country",
+        "description": "",
+        "id": "gmi-bank-all-customer-info;us25-post-country",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 29,
+            "name": "kullaniciii tum countr bilgilerini okur sayfasina giderek \"https://www.gmibank.com/api/tp-countries\"",
+            "match": {},
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 30,
+            "name": "kullaniciii yeni  bir  country olusturur \"Yeni Bayram\" ve assert eder",
+            "match": {},
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@butunmusteriler"
+          },
+          {
+            "name": "@us25_post"
           }
         ]
       }
     ],
-    "name": "Account profile page",
+    "name": "Gmi Bank All Customer Info",
     "description": "",
-    "id": "account-profile-page",
+    "id": "gmi-bank-all-customer-info",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/Hyrai02.feature",
+    "uri": "file:src/test/resources/features/api01.feature",
     "tags": [
       {
-        "name": "@allModuleSettings",
+        "name": "@butunmusteriler",
         "type": "Tag",
         "location": {
           "line": 1,

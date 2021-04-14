@@ -19,7 +19,7 @@ public class US_14_AccountProfilePage {
     public WebElement linkSignUp;
     @FindBy(xpath = "//*[@id=\"__next\"]/div/main/section/div[2]/div[1]/button[2]")
     public WebElement signInButton;
-    @FindBy(xpath = "(//input[@class='input__Input-sc-98umss-0 bsZpih'])[1]")
+    @FindBy(xpath = "//input[@name='email']")
     public WebElement signInMail;
     @FindBy(xpath = "//*[@name='password']")
     public WebElement signInPassword;
