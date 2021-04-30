@@ -8,11 +8,11 @@ Feature: Gmi Bank All Customer Info
   @apicountry
   Scenario: Country
     Given kullaniciii tum countr bilgilerini okur sayfasina giderek "https://www.gmibank.com/api/tp-countries"
-    Then kullaniciii country assert "Japan" eder
+    Then kullaniciii country assert "Malta" eder
   @apistate
   Scenario: State
     Given kullaniciii tum state bilgilerini okur sayfasina giderek "https://www.gmibank.com/api/tp-states"
-    Then kullaniciii state "ohio" aseert eder
+    Then kullaniciii state "Virginia" aseert eder
   @us24_post
   Scenario: US24_post
     Given kullaniciii state bilgilerini okur sayfasina giderek "https://www.gmibank.com/api/tp-states"

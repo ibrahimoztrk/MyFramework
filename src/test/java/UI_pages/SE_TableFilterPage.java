@@ -45,7 +45,7 @@ public class SE_TableFilterPage {
 
 
 
-    public void selectLenght(WebElement element ) {
+        public void selectLenght(WebElement element ) {
         Select select = new Select(element);
         select.selectByValue("50");
 

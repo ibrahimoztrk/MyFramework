@@ -60,7 +60,9 @@ public class HyriaSettingsStepDef {
     @Given("user change technologies experience")
     public void user_change_technologies_experience() {
         Driver.clickWithJS(hyriaResumePage.changeSkillSet);
+
         hyriaResumePage.skillSetInput.click();
+      //  Driver.clickWithJS(hyriaResumePage.skillSetInputClear);
     //    hyriaResumePage.skillSetInputClear.click();
         Driver.wait(3);
         hyriaResumePage.skillSetInput.sendKeys("Net");

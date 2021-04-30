@@ -12,8 +12,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "UI_tests",
-        tags = "@butunmusteriler",
-        dryRun = true
+        tags = "@seleniumeasy05 ",
+        dryRun = false
 
 
 )

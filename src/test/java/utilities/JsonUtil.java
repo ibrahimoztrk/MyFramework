@@ -1,6 +1,7 @@
 package utilities;
 
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.JsonParseException;
@@ -9,6 +10,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.IOException;
 
+import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
 
 public class JsonUtil {
@@ -51,7 +53,7 @@ public class JsonUtil {
     }
 
     public static Response responseMethod(String url) {
-        Response response = given().
+        Response response = given().auth().oauth2(ConfigurationReader.getProperty("token")).
                 accept(ContentType.JSON).
                 when().
                 get(url);
@@ -59,6 +61,36 @@ public class JsonUtil {
 
         return response;
     }
+
+    public static Response getResponse(String url) {
+
+        return given().
+                accept(ContentType.JSON).
+                when().
+                get(url);
+    }
+
+
+    public static String getToken() {
+
+        String username = "ttrycatch";
+        String pass = "JQ3iPpTEKTLjSQJ!";
+        String body = "{\n" +
+                "  \"userName\": \"ttrycatch\",\n" +
+                "  \"password\": \"JQ3iPpTEKTLjSQJ!\"\n" +
+                "}";
+        String enpoint = "https://demoqa.com/Account/v1/GenerateToken";
+        Response response = given().
+                                contentType(ContentType.JSON).
+                                auth().basic(username, pass).
+                                body(body).
+                            when().
+                                post(enpoint);
+        JsonPath json = response.jsonPath();
+
+        return json.getString("token");
+    }
+
     // List data convert json to java
 
     // Customer[] allCustomer = mapper.readValue(json, Customer[].class);

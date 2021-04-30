@@ -9,6 +9,7 @@ import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pojos.Infos;
+import pojos.Pagination;
 import pojos.Users;
 import utilities.JsonUtil;
 
@@ -17,6 +18,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -98,7 +100,7 @@ public class Pojo01 {
 
         for (Infos w : user.getData()) {
             for (Infos s : user.getData()) {
-                Assert.assertTrue(!w.getName().equals(null));
+                Assert.assertNotNull(w.getName());
             }
 
 
@@ -181,16 +183,23 @@ public class Pojo01 {
 
     @Test
     public void TC08() throws JsonProcessingException {
+        //null data verification
         response = JsonUtil.responseMethod(endPoint);
+        response.prettyPrint();
         Users allusers = objectMapper.readValue(response.asString(), Users.class);
-
-
-        for (Infos w : allusers.getData()) {
-
-            //     if(w.getName().equals(null) || w.getId().equals(null) || w.getGender().equals(null) ||  )
+        for (int i = 0; i <allusers.getData().size() ; i++) {
+         Assert.assertFalse(allusers.getData().get(i).getGender().equals(null));
+            Assert.assertFalse(allusers.getData().get(i).getId()==null);
+            Assert.assertFalse(allusers.getData().get(i).getStatus().equals(null));
+            Assert.assertFalse(allusers.getData().get(i).getEmail().equals(null));
+            Assert.assertFalse(allusers.getData().get(i).getName().equals(null));
+            Assert.assertFalse(allusers.getData().get(i).getEmail().equals(null));
+            Assert.assertFalse(allusers.getData().get(i).getCreatedAt().equals(null));
         }
 
+
     }
+
 
     @Test
     public void TC09() throws JsonProcessingException {
@@ -230,6 +239,9 @@ public class Pojo01 {
     public void TC011() throws JsonProcessingException {
         response = JsonUtil.responseMethod(endPoint);
         Users allusers = objectMapper.readValue(response.asString(), Users.class);
+        Pagination pag = allusers.getMeta().getPagination();
+
+
 
         List<String> allName = new ArrayList<>();
         for (Infos w : allusers.getData()) {
@@ -261,15 +273,18 @@ public class Pojo01 {
         List<String> allUpdateDate = new ArrayList<>();
         for (Infos w : allUsers.getData()) {
             allUpdateDate.add(w.getCreatedAt());
-        }
-        for (String w : allCreateDate) {
-            for (String z : allUpdateDate) {
-                if (w.compareTo(z)  <  0) {
-                    System.out.println("b   "+ w);
-                }
-            }
 
         }
+
+        for (int i = 0; i <allUsers.getData().size() ; i++) {
+                 String createDates = allUsers.getData().get(i).getCreatedAt().substring(0,16);
+                 String updateDates = allUsers.getData().get(i).getUpdatedAt().substring(0,16);
+                 LocalDateTime createTime = LocalDateTime.parse(createDates);
+                 LocalDateTime updateTime = LocalDateTime.parse(updateDates);
+                 Assert.assertTrue(createTime.isBefore(updateTime) || createTime.isEqual(updateTime));
+
+        }
+
 
     }
 }

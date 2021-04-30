@@ -221,7 +221,7 @@ select first_name,  sum(quantity)
 from employees
 join orders on orders.employee_id= employees.employee_id
 join order_details on orders.order_id = order_details.order_id
-where first_name Like 'A%'
+where first_name like 'A%'
 group by first_name
 
 --customers tablosunda sehri Berlin olan en az bir musteri vardir.
@@ -281,7 +281,7 @@ from products p
  --Nancy nin toplam 29 farkli firmaya satis dogrulayiniz.
  
  
- select  DISTINCT  s.company_name, e.first_name
+ select  distinct  s.company_name, e.first_name
  from employees e 
  join orders o on o.employee_id = e.employee_id
  join order_details od on od.order_id = o.order_id
@@ -302,7 +302,29 @@ from products p
  join order_details od on od.order_id = o.order_id
  join products p on p.product_id = od.product_id
  join suppliers s on s.supplier_id = p.supplier_id
- group by e.first_name order by count(s.company_name) desc;]]></console>
+ group by e.first_name order by count(s.company_name) desc;
+
+
+
+select first_name,title,employee_id from employees order by random() limit 1;
+
+insert into customers(contact_name,company_name,customer_id)
+select first_name,title,employee_id from employees
+order by random() limit 1;
+
+
+select contact_name 
+from customers
+
+--ÖDEV:Suppliers tablosundan rastgele bir supplier'in company_name,supplier_id' sini getirin.
+--customers tablosundaki "company_name,customer_id" sütunlarina random olarak buldugunuz degerleri ekleyiniz
+--eklediginiz bilgileri dogrulayiniz
+
+
+insert into customers(company_name,customer_id)
+select company_name, supplier_id 
+from suppliers
+order by random () limit 1;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

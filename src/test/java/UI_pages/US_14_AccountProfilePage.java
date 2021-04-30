@@ -168,7 +168,7 @@ public class US_14_AccountProfilePage {
     @FindBy(xpath ="(//button[@class='button__StyledButton-sc-914rhs-0 dOCYDw'])[8]")
     public WebElement changeSkillSet;
     @FindBy(xpath = "(//div[@class=' css-tlfecz-indicatorContainer'])[7]")
-    public WebElement skillSetInutClear;
+    public WebElement skillSetInputClear;
     @FindBy(xpath ="(//button[@class='button__StyledButton-sc-914rhs-0 dOCYDw'])[9]")
     public WebElement changeYearsOfExperience;
 

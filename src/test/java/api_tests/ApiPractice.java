@@ -37,7 +37,7 @@ public class ApiPractice {
     public void testName() {
         response = JsonUtil.responseMethod(endpoint);
         response.then().assertThat().statusCode(200).contentType("application/JSON");
-     //  response.prettyPrint();
+     response.prettyPrint();
 
          jsonPath = response.jsonPath();
         List<String>  titles = jsonPath.getList("title");
