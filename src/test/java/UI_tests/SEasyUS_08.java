@@ -29,14 +29,14 @@ public class SEasyUS_08 {
 
     SEasyDataDownPage sdataDownPage = new SEasyDataDownPage();
 
-//    @BeforeMethod
-//    public void test1() {
-//        Driver.getDriver().get("https://www.seleniumeasy.com/test/");
-//        sdataDownPage.startButton.click();
-//        sdataDownPage.tableButton.click();
-//        sdataDownPage.tableDataDown.click();
-//
-//    }
+    @BeforeMethod
+    public void test1() {
+        Driver.getDriver().get("https://www.seleniumeasy.com/test/");
+        sdataDownPage.startButton.click();
+        sdataDownPage.tableButton.click();
+        sdataDownPage.tableDataDown.click();
+
+    }
 
     @Test
     public void test2() {

@@ -129,7 +129,7 @@ public class Pojo01 {
             }
 
         }
-        Assert.assertTrue(numberOfDublicate == 0);
+        Assert.assertEquals(numberOfDublicate, 0);
     }
 
     @Test
@@ -155,6 +155,8 @@ public class Pojo01 {
     public void TC06() throws JsonProcessingException {
         //active status count assertion
 
+
+
         response = JsonUtil.responseMethod(endPoint);
         Users allusers = objectMapper.readValue(response.asString(), Users.class);
         int numberOfActives = 0;
@@ -165,7 +167,7 @@ public class Pojo01 {
             }
         }
         System.out.println(numberOfActives);
-        Assert.assertTrue(numberOfActives == 7);
+        Assert.assertEquals(numberOfActives, 7);
     }
 
     @Test

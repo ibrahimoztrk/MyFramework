@@ -38,6 +38,9 @@ public class TraviaAPI {
 
         JsonPath jsonPath = response.jsonPath();
 
+        int dd = jsonPath.getInt("response_code");
+        System.out.println("INTEGER "+ dd);
+
         List<String> myList = jsonPath.getList("results");
         Assert.assertEquals(myList.size(), 10);
 
@@ -54,11 +57,11 @@ public class TraviaAPI {
 
         int count =0;
         List<Map<String,String>> mapData = jsonPath.getList("results");
-        for (int i = 0; i <mapData.size() ; i++) {
-              if(mapData.get(i).containsKey("correct_answer")) {
-                  count++;
-              }
-              Assert.assertTrue(mapData.get(i).containsKey("correct_answer"));
+        for (Map<String, String> mapDatum : mapData) {
+            if (mapDatum.containsKey("correct_answer")) {
+                count++;
+            }
+            Assert.assertTrue(mapDatum.containsKey("correct_answer"));
 
         }
 

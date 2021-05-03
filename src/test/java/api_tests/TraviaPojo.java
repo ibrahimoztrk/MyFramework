@@ -12,6 +12,7 @@ import pojos.TriviaPojo;
 import utilities.JsonUtil;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
@@ -47,7 +48,7 @@ public class TraviaPojo {
                 assertThat().
                 statusCode(200);
 
-        response.prettyPrint();
+        //response.prettyPrint();
 
         TriviaPojo triviaPojo = objectMapper.readValue(response.asString(), TriviaPojo.class);
         System.out.println(triviaPojo.getResults().size());
@@ -62,7 +63,7 @@ public class TraviaPojo {
 
         response = JsonUtil.getResponse(endpoint);
         TriviaPojo triviaPojo = objectMapper.readValue(response.asString(), TriviaPojo.class);
-        Assert.assertEquals(triviaPojo.getResults().size(), 10);
+        Assert.assertEquals(triviaPojo.getResults(), 10);
 
 
     }
@@ -71,11 +72,14 @@ public class TraviaPojo {
     public void TC03() throws JsonProcessingException {
         response = JsonUtil.getResponse(endpoint);
         TriviaPojo triviaPojo = objectMapper.readValue(response.asString(), TriviaPojo.class);
-
+        List<String> numberQuestion = new ArrayList<>();
         for (Result w : triviaPojo.getResults()) {
+            numberQuestion.add(w.getQuestion());
             Assert.assertNotNull(w.getQuestion());
         }
 
+
+        Assert.assertEquals(numberQuestion.size(), 10);
     }
 
     @Test
@@ -87,22 +91,28 @@ public class TraviaPojo {
         int count = 0;
         for (Result w : triviaPojo.getResults()) {
             Assert.assertNotNull(w.getCorrectAnswer());
-            if (w.getCorrectAnswer() != null) {
+            if (w.getCorrectAnswer() == null) {
                 count++;
             }
         }
-        Assert.assertEquals(count, 10);
+        Assert.assertEquals(count, 0);
     }
 
     @Test
     public void TC05() throws JsonProcessingException {
         response = JsonUtil.getResponse(endpoint);
-        TriviaPojo triviaPojo = objectMapper.readValue(response.asString(),TriviaPojo.class);
+        TriviaPojo triviaPojo = objectMapper.readValue(response.asString(), TriviaPojo.class);
         for (Result w : triviaPojo.getResults()) {
-           Assert.assertEquals(w.getIncorrectAnswers().size(),3);
+            Assert.assertEquals(w.getIncorrectAnswers().size(), 3);
         }
 
     }
+
+    @Test
+    public void testName() {
+
+        response = given().
+
+                post();
+    }
 }
-
-

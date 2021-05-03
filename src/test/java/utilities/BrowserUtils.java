@@ -63,8 +63,8 @@ public class BrowserUtils {
         }
         return elemTexts;
     }
-    public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeToWaitInSec);
+    public static WebElement waitForVisibility(WebElement element, int timeout) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
     public static WebElement waitForVisibility(By locator, int timeout) {

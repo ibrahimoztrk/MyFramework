@@ -53,13 +53,12 @@ public class JsonUtil {
     }
 
     public static Response responseMethod(String url) {
-        Response response = given().auth().oauth2(ConfigurationReader.getProperty("token")).
+        //  response.prettyPrint();
+
+        return given().auth().oauth2(ConfigurationReader.getProperty("token")).
                 accept(ContentType.JSON).
                 when().
                 get(url);
-        //  response.prettyPrint();
-
-        return response;
     }
 
     public static Response getResponse(String url) {
@@ -68,6 +67,8 @@ public class JsonUtil {
                 accept(ContentType.JSON).
                 when().
                 get(url);
+
+
     }
 
 
