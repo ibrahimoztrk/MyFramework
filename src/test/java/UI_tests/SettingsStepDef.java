@@ -8,7 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import utilities.Driver;
 
-public class HyriaSettingsStepDef {
+public class SettingsStepDef {
 
     US_14_AccountProfilePage hyriaResumePage = new US_14_AccountProfilePage();
     Actions actions = new Actions(Driver.getDriver());

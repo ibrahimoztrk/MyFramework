@@ -2,11 +2,7 @@ package UI_tests;
 
 import UI_pages.SE_JQueryDownload;
 import UI_pages.US06_TablePage;
-import io.cucumber.java.bs.A;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -64,5 +60,15 @@ public class SEasyUS_09 {
 
 
 
+    }
+   int a;
+    public static void main(String[] args) {
+        for (int i = 0;  ; i++) {
+            System.out.println("s");
+
+
+
+
+        }
     }
 }

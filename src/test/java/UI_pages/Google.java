@@ -1,13 +1,11 @@
 package UI_pages;
 
-import UI_tests.HyriaRole;
-import org.apache.poi.hssf.record.chart.DatRecord;
 import org.testng.annotations.Test;
 import utilities.Driver;
 
 public class Google {
 
-    HyriaRolePage google = new HyriaRolePage();
+    RolePage google = new RolePage();
     @Test
     public void testName() {
         Driver.getDriver().get("https://www.google.com");

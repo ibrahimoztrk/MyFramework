@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class HyriaRolePage {
+public class RolePage {
 
-    public HyriaRolePage() {
+    public RolePage() {
 
         PageFactory.initElements(Driver.getDriver(),this);
 

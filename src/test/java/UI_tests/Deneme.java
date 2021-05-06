@@ -1,11 +1,5 @@
 package UI_tests;
 
-import UI_pages.HyriaRolePage;
-import io.cucumber.java.en.Given;
-import org.apache.poi.hssf.record.chart.DatRecord;
-import utilities.Driver;
-
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
