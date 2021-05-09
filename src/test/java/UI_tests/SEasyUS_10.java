@@ -39,9 +39,9 @@ public class SEasyUS_10 {
 
     @Test
     public void TC01() {
-          actions = new Actions(Driver.getDriver());
-          seJquery.dragDropSlidersButton.click();
-          actions.dragAndDrop(seJquery.valueSetGreyDrag,seJquery.valueSetGreyDrop).perform();
+//          actions = new Actions(Driver.getDriver());
+//          seJquery.dragDropSlidersButton.click();
+//          actions.dragAndDrop(seJquery.valueSetGreyDrag,seJquery.valueSetGreyDrop).perform();
 
 
 

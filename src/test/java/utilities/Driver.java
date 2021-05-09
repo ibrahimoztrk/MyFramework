@@ -16,20 +16,12 @@ import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
-    // Eğer bir class'tan NESNE ÜRETİLMESİNİ İSTEMİYORSANIZ
-    // constructor'ı private yapabilirsiniz (Singleton Class)
+
     private Driver(){ }
-    // WebDriver nesnemizi, static olarak oluşturduk, çünkü program başlar başlamaz
-    // hafızada yer almasını istiyoruz.
+
     static WebDriver driver;
-    // Programın herhangi bir yerinden getDriver() methodu çağırılarak
-    // hafıza STATIC olarak oluşturulmuş DRIVER nesnesine erişebiliriz.
-    // Yani yeniden WebDriver nesnesi oluşturmak zorunda değiliz.
-    //Driver.getDriver()
+
     public static WebDriver getDriver(){
-        // Eğer driver nesnesi hafızada boşsa, oluşturulmamışsa yeniden oluşturmana gerek yok.
-        // Eğer null ise, yeniden oluşturabilirsin.
-        // Sadece ilk çağırıldığında bir tane nesne üret, sonraki çağırmalarda var olan nesnesi kullan.
 
 
         if(driver == null){
@@ -62,10 +54,9 @@ public class Driver {
         return driver;
     }
     public static void closeDriver(){
-        // Eğer driver nesnesi NULL değilse, yani hafızada varsa
         if (driver != null){
-            driver.quit();  // driver'ı kapat
-            driver = null;  // driver'ı hafızadan temizle.
+            driver.quit();
+            driver = null;
         }
     }
     public static void wait(int secs) {
@@ -143,7 +134,6 @@ public class Driver {
             error.printStackTrace();
         }
     }
-    //hyrai projesi icin olsuturulmus bir method
     public static void cleanTextInBox(WebElement element) {
         String inputText = element.getAttribute("value");
         if( inputText != null ) {
@@ -151,5 +141,5 @@ public class Driver {
                 element.sendKeys(Keys.BACK_SPACE);
             }
         }
-    }              //Multi Browser Test(chrome, firefox, ie ...) yaparken bu onemli olacaktir.
+    }
 }

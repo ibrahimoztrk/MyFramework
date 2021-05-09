@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import utilities.Driver;
 
 import java.nio.file.Watchable;
+import java.util.List;
 
 public class SE_JQueryDownload {
 
@@ -39,10 +40,11 @@ public class SE_JQueryDownload {
 
     @FindBy(xpath = "//div[@class='list-group']//a[.='Drag & Drop Sliders']")
     public WebElement dragDropSlidersButton;
-    @FindBy(xpath = "(//output[.='10'])")
-    public WebElement valueSetGreyDrag;
-    @FindBy(xpath = "(//output[.='19'])")
-    public WebElement valueSetGreyDrop;
+    @FindBy(xpath = "//input[@type='range']")
+    public List<WebElement> firstOutput;
+    @FindBy(xpath = "//output" )
+    public WebElement outputs;
+
 
 
 
