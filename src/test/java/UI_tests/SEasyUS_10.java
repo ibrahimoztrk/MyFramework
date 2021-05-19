@@ -10,6 +10,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utilities.Driver;
 
+import java.util.List;
+
 import static utilities.BrowserUtils.selectRandomTextFromDropdown;
 import static utilities.BrowserUtils.waitForClickablility;
 
